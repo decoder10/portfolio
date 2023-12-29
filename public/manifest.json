@@ -1,0 +1,21 @@
+{
+  "short_name": "Aram Mkrtchyan Portfolio",
+  "name": "Aram Mkrtchyan Portfolio | Senior Front End Developer",
+  "icons": [
+    {
+      "src": "me.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "me.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": ".",
+  "display": "standalone",
+  "theme_color": "#1976d2",
+  "background_color": "#F7F8FA"
+}

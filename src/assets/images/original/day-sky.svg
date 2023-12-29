@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="13.08 3.11 482.14 287.62">
+    <defs>
+        <linearGradient id="A" x1="171.053" y1="-669.447" x2="181.743" y2="326.934" gradientUnits="userSpaceOnUse">
+            <stop offset="0" stop-color="#afc6e9"/>
+            <stop offset="1" stop-color="#fff"/>
+        </linearGradient>
+        <radialGradient id="B" cx="-96.072" cy="-2905.174" fx="-96.072" fy="-2905.174" r="3842.62"
+                        gradientTransform="matrix(-.00035 1.06486 -1.15872 -.00038 -3462.376 -1559.418)"
+                        gradientUnits="userSpaceOnUse"/>
+    </defs>
+    <path d="M-853.124-558.262h2033.387V656.211H-853.124z" transform="matrix(.23681 0 0 .23681 215.708 135.316)"
+          fill="url(#A)" paint-order="fill markers stroke"/>
+</svg>

@@ -1,0 +1,40 @@
+.home {
+  user-select: none;
+  text-align: center;
+  padding-bottom: 6%;
+  position: relative;
+  z-index: 3;
+
+  h1 {
+    font-size: 30px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    opacity: 0.3;
+  }
+
+  h2 {
+    margin-top: 5px;
+    font-size: 20px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    opacity: 0.2;
+  }
+
+  p {
+    margin-top: 5px;
+    font-size: 15px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    opacity: 0.2;
+  }
+}
+
+@media screen and (max-width: 450px) and (orientation: portrait) {
+  .home {
+    padding-bottom: 20%;
+  }
+}
+

@@ -1,0 +1,161 @@
+$border-color_1: var(--indigo-border);
+$border-color_2: var(--gray-border);
+
+@keyframes switch {
+  0% {
+    left: 2px;
+  }
+  60% {
+    left: 2px;
+    width: 56px;
+  }
+  100% {
+    left: 52px;
+    width: 40px;
+  }
+}
+
+@keyframes reverse {
+  0% {
+    left: 52px;
+    width: 40px;
+  }
+  60% {
+    left: 36px;
+    width: 56px;
+  }
+  100% {
+    left: 2px;
+  }
+}
+
+.daySwitcher {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  z-index: 7;
+
+  input {
+    display: none;
+  }
+
+  input {
+    &:checked {
+      + {
+        label {
+          background: var(--indigo-color);
+          border-color: $border-color_1;
+
+          span {
+            left: 30px;
+            width: 2.5px;
+
+            &:before {
+              top: -12.5px;
+              width: 2.5px;
+              height: 2.5px;
+            }
+
+            &:after {
+              top: 10px;
+              left: -15px;
+              width: 2.5px;
+              height: 2.5px;
+            }
+          }
+
+          &:before {
+            background: var(--white);
+            border-color: $border-color_2;
+            animation-duration: 250ms;
+            animation-name: switch;
+            animation-fill-mode: forwards;
+          }
+
+          &:after {
+            opacity: 1;
+            transition-delay: 350ms;
+          }
+        }
+      }
+    }
+  }
+
+  label {
+    position: relative;
+    display: flex;
+    width: 100px;
+    height: 50px;
+    background: var(--blue-color);
+    border: 3px solid var(--blue-border);
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 350ms ease-in;
+
+    &:before {
+      position: absolute;
+      top: 2px;
+      left: 2px;
+      width: 40px;
+      height: 40px;
+      background: var(--yellow-background);
+      border: 3px solid var(--yellow-border);
+      border-radius: 40px;
+      animation-duration: 250ms;
+      animation-name: reverse;
+      animation-fill-mode: forwards;
+      transition: all 350ms ease-in;
+      content: "";
+    }
+
+    &:after {
+      position: absolute;
+      top: 11.5px;
+      left: 71.5px;
+      width: 5px;
+      height: 5px;
+      box-shadow: var(--gray-dots) -8px 0 0 2px, var(--gray-dots) -14px 6px 0px -1px;
+      background: transparent;
+      border-radius: 50%;
+      opacity: 0;
+      transition: all 250ms ease-in;
+      transition-delay: 0ms;
+      content: "";
+    }
+  }
+
+  span {
+    position: relative;
+    top: 22.5px;
+    left: 67.5px;
+    width: 5px;
+    height: 2.5px;
+    background: var(--white);
+    border-radius: 3px;
+    transition: all 150ms ease-in;
+
+    &:before {
+      position: absolute;
+      top: -2.5px;
+      left: -10px;
+      width: 20px;
+      height: 2.5px;
+      background: var(--white);
+      border-radius: 3px;
+      transition: all 150ms ease-in;
+      content: "";
+    }
+
+    &:after {
+      position: absolute;
+      top: 2.5px;
+      left: -5px;
+      width: 20px;
+      height: 2.5px;
+      background: var(--white);
+      border-radius: 3px;
+      transition: all 150ms ease-in;
+      content: "";
+    }
+  }
+}

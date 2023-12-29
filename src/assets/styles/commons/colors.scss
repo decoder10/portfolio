@@ -1,0 +1,40 @@
+:root {
+  /** sunny side **/
+  --blue-background: #C2E9F6;
+  --blue-border: #72cce3;
+  --blue-color: #96dcee;
+  --yellow-background: #fffaa8;
+  --yellow-border: #f5eb71;
+  /** dark side **/
+  --indigo-background: #808fc7;
+  --indigo-border: #5d6baa;
+  --indigo-color: #6b7abb;
+  --gray-border: #e8e8ea;
+  --gray-dots: #e8e8ea;
+  /** general **/
+  --white: #fff;
+}
+
+.light-theme {
+  --background: url("../../images/day.svg");
+  --sky-background: url("../../images/day-sky.svg");
+  --cloud: 1;
+  --cloud-background: #EAEFF9;
+  --cloud-text: #426167;
+  --loader-background: #B8CDEC;
+  --team-filter: grayscale(0);
+  --menu-background-front: var(--blue-color);
+  --menu-background-back: var(--indigo-color);
+}
+
+.dark-theme {
+  --background: url("../../images/night.svg");
+  --sky-background: url("../../images/night-sky.svg");
+  --cloud: 0.5;
+  --cloud-background: #565760;
+  --cloud-text: #ffffff;
+  --loader-background: #21212C;
+  --team-filter: grayscale(100%);
+  --menu-background-front: var(--indigo-color);
+  --menu-background-back: var(--blue-color);
+}

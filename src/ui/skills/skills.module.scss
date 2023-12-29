@@ -1,0 +1,41 @@
+.skills {
+  position: relative;
+  display: flex;
+  z-index: 6;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 570px;
+  padding: 20px;
+  margin-bottom: 4%;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.23);
+  border-radius: 16px;
+  user-select: none;
+  backdrop-filter: blur(5.7px);
+  -webkit-backdrop-filter: blur(5.7px);
+
+  img {
+    display: block;
+    max-width: 72px;
+    max-height: 72px;
+
+    &:not(:first-child) {
+      margin-left: 20px;
+    }
+  }
+}
+
+@media screen and (max-width: 450px) and (orientation: portrait) {
+  .skills {
+    width: 90%;
+    padding-bottom: 0;
+    margin-bottom: 10%;
+
+    img {
+      width: 50px;
+      height: 50px;
+      margin-bottom: 20px;
+    }
+  }
+}
+
