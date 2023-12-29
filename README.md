@@ -1,3 +1,5 @@
+[![Netlify Status](https://api.netlify.com/api/v1/badges/2faef6cf-badb-4f8d-a4c9-7a0adaf71ca0/deploy-status)](https://app.netlify.com/sites/aram-dev/deploys)
+
 # Getting Started with Create React App
 
 This is project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) TS template.
