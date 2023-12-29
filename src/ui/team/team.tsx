@@ -7,17 +7,21 @@ import styles from './team.module.scss';
 const Team: FC = () => {
   return (
     <div className={styles.team}>
-      {team.map(item => {
-        const { image, name, linkedin, position } = item;
+      <ul>
+        {team.map(item => {
+          const { image, name, linkedin, position } = item;
 
-        return (
-          <a href={linkedin} target="_blank" key={name}>
-            <img src={require(`assets/images/team/${image}.jpg`)} alt="" />
-            <h1>{name}</h1>
-            <p>{position}</p>
-          </a>
-        );
-      })}
+          return (
+            <li key={name}>
+              <a href={linkedin} target="_blank">
+                <img src={require(`assets/images/team/${image}.jpg`)} alt="" />
+                <h1>{name}</h1>
+                <p>{position}</p>
+              </a>
+            </li>
+          );
+        })}
+      </ul>
     </div>
   );
 };
