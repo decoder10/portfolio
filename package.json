@@ -85,7 +85,7 @@
     "build": "sh -ac '. .env.production; react-app-rewired build' --experimentalChunkGranularity small",
     "build:development": "REACT_APP_ENV=development yarn run build",
     "build:staging": "REACT_APP_ENV=staging yarn run build",
-    "build:production": "yarn run build",
+    "build:production": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "lint": "eslint \"**/*.+(ts|tsx)\" --ignore-pattern 'node_modules/'",
