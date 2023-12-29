@@ -9,13 +9,13 @@ const Clouds: FC = () => {
     <div className={styles.clouds}>
       <div className={styles.rightMove}>
         {cloudsArray.map(item => {
-          return <div className={styles.cloud} />;
+          return <div className={styles.cloud} key={item} />;
         })}
       </div>
 
       <div className={styles.leftMove}>
         {cloudsArray.map(item => {
-          return <div className={styles.cloud} />;
+          return <div className={styles.cloud} key={item} />;
         })}
       </div>
     </div>
