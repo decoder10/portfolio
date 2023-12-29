@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import AppRoutes from 'routes/app-routes';
 
 import Birds from 'components/birds/birds';
+import Clouds from 'components/clouds/clouds';
 import DaySwitcher from 'components/day-switcher/day-switcher';
 import Header from 'components/header/header';
 import MainLoader from 'components/main-loader/main-loader';
@@ -23,6 +24,8 @@ function App() {
         <img src={require('assets/images/me.png')} alt="" className="me" />
 
         <Header dayState={theme} />
+
+        <Clouds />
 
         <section className="pages-wrap">
           <React.Suspense

@@ -67,10 +67,16 @@
       transform: scale(0.15);
     }
 
+    $birdTop: -14px, -20px, auto, 15px, 30px, 38px, -5px, 10px, 25px, 40px, -10px, 5px;
+    $birdLeft: 28px, -20px, 10px, 20px, -5px, -25px, -35px, -25px, -50px, -40px, -75px, -65px;
+
     @for $i from 1 through 12 {
       $delay: random(2) - .5 + s;
 
       .bird:nth-of-type(#{$i}) {
+        top: nth($birdTop, $i);
+        left: nth($birdLeft, $i);
+
         .wing1 {
           animation: flap .6s ease-in-out;
           animation-iteration-count: infinite;
@@ -81,65 +87,6 @@
           animation-delay: $delay;
         }
       }
-    }
-
-    .bird1 {
-      top: -14px;
-      left: 28px;
-    }
-
-    .bird2 {
-      top: -20px;
-      left: -15px;
-    }
-
-    .bird3 {
-      left: 10px;
-    }
-
-    .bird4 {
-      top: 15px;
-      left: 20px;
-    }
-
-    .bird5 {
-      top: 30px;
-      left: -5px;
-    }
-
-    .bird6 {
-      top: 38px;
-      left: 25px;
-    }
-
-    .bird7 {
-      top: -5px;
-      left: -35px;
-    }
-
-    .bird8 {
-      top: 10px;
-      left: -25px;
-    }
-
-    .bird9 {
-      top: 25px;
-      left: -50px;
-    }
-
-    .bird10 {
-      top: 40px;
-      left: -40px;
-    }
-
-    .bird11 {
-      top: -10px;
-      left: -75px;
-    }
-
-    .bird12 {
-      top: 5px;
-      left: -65px;
     }
   }
 
@@ -176,6 +123,25 @@
   }
 }
 
-
 @media screen and (max-width: 450px) and (orientation: portrait) {
+  @keyframes flyBack {
+    0% {
+      transform: translate3d(0, 0, 0) scale(.6) scaleX(-1) rotate(-15deg);
+    }
+    80% {
+      transform: translate3d(130vw, -150px, 0) scale(.6) scaleX(-1) rotate(15deg);
+    }
+    100% {
+      transform: translate3d(130vw, -150px, 0) scale(.6) scaleX(-1) rotate(15deg);
+    }
+  }
+
+  @keyframes flyFront {
+    20% {
+      transform: translate3d(0, 0, 0) rotate(0deg);
+    }
+    100% {
+      transform: translate3d(-130vw, -0, 0) rotate(0deg);
+    }
+  }
 }
