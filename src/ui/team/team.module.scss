@@ -84,11 +84,13 @@
   }
 }
 
-@media screen and (max-device-height: 500px) and (orientation: landscape) {
+@media only screen and (max-height: 500px) and (max-width: 860px) and (orientation: landscape) {
   .team {
+    width: 80%;
+
     > ul {
       justify-content: center;
-      max-height: 40vh;
+      max-height: 42vh;
       padding-right: 10px;
 
       > li {
