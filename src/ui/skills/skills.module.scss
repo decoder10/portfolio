@@ -18,6 +18,7 @@
     max-width: 72px;
     max-height: 72px;
     margin-bottom: 20px;
+    filter: var(--team-filter);
 
     &:not(:first-child) {
       margin-left: 20px;

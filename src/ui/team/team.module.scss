@@ -10,7 +10,7 @@
   border-radius: 16px;
   user-select: none;
   backdrop-filter: blur(5.7px);
-  -webkit-backdrop-filter: blur(5.7px);
+  justify-content: center;
 
   > ul {
     display: flex;
@@ -69,8 +69,25 @@
 @media screen and (max-width: 600px) and (orientation: portrait) {
   .team {
     > ul {
-      justify-content: space-between;
       max-height: 30vh;
+      padding-right: 10px;
+
+      > li {
+        width: 130px;
+
+        img {
+          width: 130px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-device-height: 500px) and (orientation: landscape) {
+  .team {
+    > ul {
+      justify-content: space-between;
+      max-height: 40vh;
       padding-right: 10px;
 
       > li {

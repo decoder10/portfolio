@@ -9,7 +9,7 @@
     font-weight: 700;
     text-transform: uppercase;
     color: white;
-    opacity: 0.3;
+    opacity: 0.5;
   }
 
   h2 {
@@ -18,7 +18,7 @@
     font-weight: 700;
     text-transform: uppercase;
     color: white;
-    opacity: 0.2;
+    opacity: 0.3;
   }
 
   p {
@@ -27,10 +27,23 @@
     font-weight: 700;
     text-transform: uppercase;
     color: white;
-    opacity: 0.2;
+    opacity: 0.3;
   }
 }
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
+  .home {
+    h1 {
+      font-size: 25px;
+    }
+
+    h2 {
+      font-size: 16px;
+    }
+
+    p {
+      font-size: 14px;
+    }
+  }
 }
 

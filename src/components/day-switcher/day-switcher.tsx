@@ -23,9 +23,11 @@ const DaySwitcher = (props: IProps) => {
   useEffect(() => {
     updateDayNightStatus();
 
-    const intervalId = setInterval(updateDayNightStatus, 60 * 1000);
+    if (!sessionStorage.getItem('dayState')) {
+      const intervalId = setInterval(updateDayNightStatus, 60 * 1000);
 
-    return () => clearInterval(intervalId);
+      return () => clearInterval(intervalId);
+    }
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
@@ -39,6 +41,7 @@ const DaySwitcher = (props: IProps) => {
         onChange={() => {
           setState(state === 'light' ? 'dark' : 'light');
           updateDayState(state === 'light' ? 'dark-theme' : 'light-theme');
+          sessionStorage.setItem('dayState', state === 'light' ? 'dark' : 'light');
         }}
       />
 
