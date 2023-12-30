@@ -4,8 +4,7 @@
   z-index: 6;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding: 20px;
-  margin-bottom: 4%;
+  padding: 20px 20px 0;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   background: rgba(255, 255, 255, 0.23);
   border-radius: 16px;
@@ -16,6 +15,7 @@
   a {
     display: block;
     width: 72px;
+    margin-bottom: 20px;
 
     &:not(:first-child) {
       margin-left: 20px;
@@ -29,14 +29,12 @@
   }
 }
 
-@media screen and (max-width: 450px) and (orientation: portrait) {
+@media screen and (max-width: 600px) and (orientation: portrait) {
   .contacts {
     width: 90%;
-    padding-bottom: 0;
 
     a {
       width: 50px;
-      margin-bottom: 20px;
 
       img {
         width: 50px;

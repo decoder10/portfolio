@@ -337,18 +337,34 @@ $left: 10%;
   }
 }
 
-@media screen and (max-width: 450px) and (orientation: portrait) {
+@media screen and (max-height: 645px) {
   .mainHeader {
     opacity: 0;
     z-index: -1;
-    transition: all 0.3s ease;
-    top: 0;
-    left: 0;
     height: 100%;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     background: rgba(255, 255, 255, 0.23);
     backdrop-filter: blur(5.7px);
-    -webkit-backdrop-filter: blur(5.7px);
+
+    &.active {
+      opacity: 1;
+      z-index: 5;
+    }
+  }
+
+  .menu {
+    display: block;
+  }
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+  .mainHeader {
+    opacity: 0;
+    z-index: -1;
+    height: 100%;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    background: rgba(255, 255, 255, 0.23);
+    backdrop-filter: blur(5.7px);
 
     &.active {
       opacity: 1;

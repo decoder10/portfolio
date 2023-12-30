@@ -1,29 +1,28 @@
 .team {
-  user-select: none;
   position: relative;
+  display: flex;
   z-index: 6;
   flex-wrap: wrap;
-  display: flex;
-  padding: 20px;
-  margin-bottom: 4%;
+  width: 90%;
+  padding: 20px 0 0 20px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   background: rgba(255, 255, 255, 0.23);
   border-radius: 16px;
+  user-select: none;
   backdrop-filter: blur(5.7px);
   -webkit-backdrop-filter: blur(5.7px);
 
   > ul {
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    margin-left: -20px;
     overflow-y: auto;
 
     > li {
       width: 150px;
-
-      &:not(:first-child) {
-        margin-left: 20px;
-      }
+      margin: 0 0 20px 20px;
 
       a {
         text-decoration: none;
@@ -33,8 +32,8 @@
         display: block;
         width: 150px;
         border-radius: 150px;
-        filter: var(--team-filter);
         transition: all 0.3s ease;
+        filter: var(--team-filter);
       }
 
       h1 {
@@ -58,20 +57,24 @@
   }
 }
 
-@media screen and (max-width: 450px) and (orientation: portrait) {
+@media screen and (max-width: 1158px) {
   .team {
-    padding-bottom: 0;
-    margin-bottom: 10%;
-    width: 90%;
+    > ul {
+      max-height: 25vh;
+      padding-right: 10px;
+    }
+  }
+}
 
-    ul {
-      max-height: 30vh;
+@media screen and (max-width: 600px) and (orientation: portrait) {
+  .team {
+    > ul {
       justify-content: space-between;
+      max-height: 30vh;
       padding-right: 10px;
 
-      li {
+      > li {
         width: 130px;
-        margin: 0 0 20px 0;
 
         img {
           width: 130px;
