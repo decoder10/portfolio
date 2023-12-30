@@ -23,11 +23,13 @@ const DaySwitcher = (props: IProps) => {
   useEffect(() => {
     updateDayNightStatus();
 
-    if (!sessionStorage.getItem('dayState')) {
-      const intervalId = setInterval(updateDayNightStatus, 60 * 1000);
+    const intervalId = setInterval(() => {
+      if (!sessionStorage.getItem('dayState')) {
+        updateDayNightStatus();
+      }
+    }, 60 * 1000);
 
-      return () => clearInterval(intervalId);
-    }
+    return () => clearInterval(intervalId);
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
