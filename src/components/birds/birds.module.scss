@@ -45,7 +45,7 @@
     height: 100px;
 
     &.front {
-      animation: flyFront 8s linear;
+      animation: flyFront 10s linear;
       animation-iteration-count: infinite;
       animation-delay: 13s;
       bottom: 200px;
@@ -54,7 +54,7 @@
     }
 
     &.back {
-      animation: flyBack 8s linear;
+      animation: flyBack 15s linear;
       //animation-direction: forwards;
       animation-iteration-count: infinite;
       animation-delay: 7s;

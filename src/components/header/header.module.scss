@@ -68,7 +68,7 @@ $left: 10%;
     min-width: 100px;
     padding: 15px 0;
     margin: 26px 20px 0;
-    box-shadow: 5px 5px rgba(0, 0, 0, 0.2);
+    box-shadow: 2px 2px rgba(0, 0, 0, 0.1);
     border-radius: 150px;
     outline: none;
     cursor: pointer;
@@ -78,9 +78,12 @@ $left: 10%;
     animation: move 3s infinite;
     transition: opacity 0.3s ease;
 
-    &:hover {
-      animation-play-state: paused;
+    @media (hover: hover) {
+      &:hover {
+        animation-play-state: paused;
+      }
     }
+
 
     &:after {
       position: absolute;
@@ -94,56 +97,6 @@ $left: 10%;
       animation: rainAnimation 0.8s linear infinite;
       animation-delay: 0.3s;
       content: '';
-    }
-
-    .bolt {
-      position: absolute;
-      top: 94%;
-      left: 50%;
-      display: none;
-      z-index: 0;
-      width: 0;
-      height: 0;
-      padding: 2px;
-      margin: 0;
-      border: 8px solid rgba(0, 0, 0, 0);
-      border-top: 0 solid;
-      border-bottom: 30px solid #ffdf00;
-      border-radius: 0;
-      opacity: 0;
-      transform: rotateZ(-160deg);
-      transform-origin: 50% 50% 0;
-      animation: blink 4s infinite;
-      overflow: visible;
-      translate: -50%;
-
-      &:after {
-        position: absolute;
-        top: -16px;
-        left: -14px;
-        width: 0;
-        height: 0;
-        padding: 0;
-        margin: 0;
-        border: 9px solid rgba(0, 0, 0, 0);
-        border-top: 0 solid;
-        border-bottom: 35px solid #ffdf00;
-        border-radius: 0;
-        transform: rotateZ(7deg);
-        transform-origin: 50% 50% 0;
-        content: "";
-        overflow: visible;
-      }
-    }
-
-    &.season {
-      &:after {
-        display: block;
-      }
-
-      .bolt {
-        display: block;
-      }
     }
 
     &:nth-of-type(1) {
@@ -194,6 +147,56 @@ $left: 10%;
 
       .bolt {
         animation-delay: 0.5s;
+      }
+    }
+
+    .bolt {
+      position: absolute;
+      top: 94%;
+      left: 50%;
+      display: none;
+      z-index: 0;
+      width: 0;
+      height: 0;
+      padding: 2px;
+      margin: 0;
+      border: 8px solid rgba(0, 0, 0, 0);
+      border-top: 0 solid;
+      border-bottom: 30px solid #ffdf00;
+      border-radius: 0;
+      opacity: 0;
+      transform: rotateZ(-160deg);
+      transform-origin: 50% 50% 0;
+      animation: blink 4s infinite;
+      overflow: visible;
+      translate: -50%;
+
+      &:after {
+        position: absolute;
+        top: -16px;
+        left: -14px;
+        width: 0;
+        height: 0;
+        padding: 0;
+        margin: 0;
+        border: 9px solid rgba(0, 0, 0, 0);
+        border-top: 0 solid;
+        border-bottom: 35px solid #ffdf00;
+        border-radius: 0;
+        transform: rotateZ(7deg);
+        transform-origin: 50% 50% 0;
+        content: "";
+        overflow: visible;
+      }
+    }
+
+    &.season {
+      &:after {
+        display: block;
+      }
+
+      .bolt {
+        display: block;
       }
     }
 
