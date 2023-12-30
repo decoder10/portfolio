@@ -4,13 +4,13 @@
   z-index: 6;
   flex-wrap: wrap;
   width: 90%;
-  padding: 20px 0 0 20px;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   background: rgba(255, 255, 255, 0.23);
   border-radius: 16px;
   user-select: none;
   backdrop-filter: blur(5.7px);
   justify-content: center;
+  padding: 20px 0 0;
 
   > ul {
     display: flex;
@@ -68,8 +68,9 @@
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
   .team {
+
     > ul {
-      max-height: 30vh;
+      max-height: 50vh;
       padding-right: 10px;
 
       > li {

@@ -132,6 +132,18 @@
   }
 }
 
+@media screen and (min-device-height: 500px) and (orientation: landscape) {
+  .main {
+    .pages-wrap {
+
+      .main-background {
+        background-position: bottom right;
+        background-size: cover;
+      }
+    }
+  }
+}
+
 /*!* HTML: <div class="loader"></div> *!
 .loader {
   position: relative;
