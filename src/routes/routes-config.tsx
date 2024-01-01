@@ -36,9 +36,10 @@ const Team = React.lazy(() => {
     setTimeout(() => resolve(import(/* webpackChunkName: "team" */ 'ui/team/team') as never), 500);
   });
 });
+
 const Contacts = React.lazy(() => {
   return new Promise(resolve => {
-    setTimeout(() => resolve(import(/* webpackChunkName: "contacts */ 'ui/contacts/contacts') as never), 500);
+    setTimeout(() => resolve(import(/* webpackChunkName: "contacts" */ 'ui/contacts/contacts') as never), 500);
   });
 });
 
