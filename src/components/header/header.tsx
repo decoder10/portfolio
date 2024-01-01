@@ -20,9 +20,9 @@ const Header = (props: IProps) => {
       <header className={`${styles.mainHeader} ${menuState ? styles.active : ''}`}>
         <nav>
           {routeConfig.map(item => {
-            const { path, title } = item;
+            const { path, title, isMenuItem } = item;
 
-            return (
+            return isMenuItem ? (
               <Link
                 to={path || '/'}
                 className={`${styles.cloudWrap} ${dayState === 'dark-theme' ? styles.season : ''}`}
@@ -35,7 +35,7 @@ const Header = (props: IProps) => {
 
                 <p>{title}</p>
               </Link>
-            );
+            ) : null;
           })}
 
           <a
