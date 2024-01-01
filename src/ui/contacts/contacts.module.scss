@@ -15,14 +15,15 @@
   a {
     display: block;
     width: 72px;
+    margin-right: 10px;
     margin-bottom: 20px;
     margin-left: 10px;
-    margin-right: 10px;
 
     .imageWrap {
-      background: #7B7B7B;
+      display: block;
       width: 72px;
       height: 72px;
+      background: #7B7B7B;
       border-radius: 15px;
 
       img {

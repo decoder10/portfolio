@@ -13,14 +13,13 @@
   backdrop-filter: blur(5.7px);
 
   .imageWrap {
-    background: #7B7B7B;
     display: block;
     width: 72px;
     height: 72px;
-    margin-bottom: 20px;
-
-    margin-left: 10px;
     margin-right: 10px;
+    margin-bottom: 20px;
+    margin-left: 10px;
+    background: #7B7B7B;
 
     img {
       visibility: hidden;
