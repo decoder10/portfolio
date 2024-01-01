@@ -28,6 +28,24 @@
         text-decoration: none;
       }
 
+      .imageWrap {
+        background: #7B7B7B;
+        border-radius: 150px;
+        display: block;
+
+        img {
+          visibility: hidden;
+        }
+
+        &.loaded {
+          background: none;
+
+          img {
+            visibility: visible;
+          }
+        }
+      }
+
       img {
         display: block;
         width: 150px;

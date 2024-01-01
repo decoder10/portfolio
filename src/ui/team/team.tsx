@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 
+import { MemoImage } from 'components/image/image';
+
 import { team } from 'ui/team/team-config';
 
 import styles from './team.module.scss';
@@ -14,7 +16,11 @@ const Team: FC = () => {
           return (
             <li key={name}>
               <a href={linkedin} target="_blank">
-                <img src={require(`assets/images/team/${image}.jpg`)} alt="" />
+                <MemoImage
+                  url={require(`assets/images/team/${image}.jpg`)}
+                  classes={styles.imageWrap}
+                  loadedClass={styles.loaded || ''}
+                />
                 <h1>{name}</h1>
                 <p>{position}</p>
               </a>
