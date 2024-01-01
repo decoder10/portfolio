@@ -1,5 +1,7 @@
 import React from 'react';
 
+import NotFound from 'ui/not-found/not-found';
+
 // const Home = React.lazy(() => import(/* webpackChunkName: "home" */ 'ui/home/home'));
 // const About = React.lazy(() => import(/* webpackChunkName: "about" */ 'ui/about/about'));
 // const Skills = React.lazy(() => import(/* webpackChunkName: "skills" */ 'ui/skills/skills'));
@@ -79,5 +81,11 @@ export const routeConfig: CustomRouteConfig[] = [
     title: 'contacts',
     element: <Contacts />,
     isMenuItem: true,
+  },
+  {
+    path: '*',
+    title: 'notFound',
+    element: <NotFound />,
+    isMenuItem: false,
   },
 ];

@@ -1,0 +1,14 @@
+.notFound {
+  user-select: none;
+  text-align: center;
+  position: relative;
+  z-index: 3;
+
+  p {
+    font-size: 40px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: white;
+    opacity: 0.5;
+  }
+}
