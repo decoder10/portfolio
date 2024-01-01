@@ -23,15 +23,15 @@ function App() {
 
         <img src={require('assets/images/me.png')} alt="" className="me" />
 
-        <Header dayState={theme} />
-
         <Clouds />
 
         <section className="pages-wrap">
+          <Header dayState={theme} />
+
           <React.Suspense
             fallback={
               <div className="lazy-loading">
-                <p>Loading...</p>
+                <div className="loader" />
               </div>
             }
           >
