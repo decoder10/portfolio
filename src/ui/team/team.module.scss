@@ -3,14 +3,14 @@
   display: flex;
   z-index: 6;
   flex-wrap: wrap;
+  justify-content: center;
   width: 90%;
+  padding: 20px 0 0;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   background: rgba(255, 255, 255, 0.23);
   border-radius: 16px;
   user-select: none;
   backdrop-filter: blur(5.7px);
-  justify-content: center;
-  padding: 20px 0 0;
 
   > ul {
     display: flex;
@@ -29,9 +29,11 @@
       }
 
       .imageWrap {
+        display: block;
+        width: 150px;
+        height: 150px;
         background: #7B7B7B;
         border-radius: 150px;
-        display: block;
 
         img {
           visibility: hidden;
@@ -49,6 +51,7 @@
       img {
         display: block;
         width: 150px;
+        height: 150px;
         border-radius: 150px;
         transition: all 0.3s ease;
         filter: var(--team-filter);
@@ -94,8 +97,14 @@
       > li {
         width: 130px;
 
+        .imageWrap {
+          width: 130px;
+          height: 130px;
+        }
+
         img {
           width: 130px;
+          height: 130px;
         }
       }
     }
@@ -114,8 +123,14 @@
       > li {
         width: 130px;
 
+        .imageWrap {
+          width: 130px;
+          height: 130px;
+        }
+
         img {
           width: 130px;
+          height: 130px;
         }
       }
     }

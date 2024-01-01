@@ -4,25 +4,42 @@
   z-index: 6;
   flex-wrap: wrap;
   justify-content: center;
-  width: 570px;
   max-width: 90%;
-  padding: 20px 20px 0;
+  padding: 20px 10px 0;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
   background: rgba(255, 255, 255, 0.23);
   border-radius: 16px;
   user-select: none;
   backdrop-filter: blur(5.7px);
 
+  .imageWrap {
+    background: #7B7B7B;
+    display: block;
+    width: 72px;
+    height: 72px;
+    margin-bottom: 20px;
+
+    margin-left: 10px;
+    margin-right: 10px;
+
+    img {
+      visibility: hidden;
+    }
+
+    &.loaded {
+      background: none;
+
+      img {
+        visibility: visible;
+      }
+    }
+  }
+
   img {
     display: block;
     max-width: 72px;
     max-height: 72px;
-    margin-bottom: 20px;
     filter: var(--team-filter);
-
-    &:not(:first-child) {
-      margin-left: 20px;
-    }
   }
 }
 
@@ -30,9 +47,14 @@
   .skills {
     width: 90%;
 
-    img {
+    .imageWrap {
       width: 50px;
       height: 50px;
+
+      img {
+        max-width: 50px;
+        max-height: 50px;
+      }
     }
   }
 }

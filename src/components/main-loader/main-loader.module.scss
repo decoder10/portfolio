@@ -31,11 +31,10 @@
       content: "";
       position: absolute;
       inset: 0 0 -100%;
-      background: radial-gradient(farthest-side, #ffd738 80%, #0000) left 70% top 20%/30px 30px,
-      radial-gradient(farthest-side, #21212c 92%, #0000) left 65% bottom 19%/30px 30px,
-      radial-gradient(farthest-side, #ecfefe 92%, #0000) left 70% bottom 20%/30px 30px,
-      linear-gradient(#b8cdec 50%, #21212c 0);
-      background-repeat: no-repeat;
+      background: radial-gradient(farthest-side, #ffd738 80%, #0000) left 70% top 20%/30px 30px no-repeat,
+      radial-gradient(farthest-side, #21212c 92%, #0000) left 65% bottom 19%/30px 30px no-repeat,
+      radial-gradient(farthest-side, #ecfefe 92%, #0000) left 70% bottom 20%/30px 30px no-repeat,
+      linear-gradient(#b8cdec 50%, #21212c 0) no-repeat;
       animation: dayNightAnimation 1s infinite;
     }
   }

@@ -1,5 +1,7 @@
 import React, { FC } from 'react';
 
+import { MemoImage } from 'components/image/image';
+
 import { contacts } from 'ui/contacts/contacts-config';
 
 import styles from './contacts.module.scss';
@@ -12,7 +14,11 @@ const Contacts: FC = () => {
 
         return (
           <a href={path} target="_blank" key={image}>
-            <img src={require(`assets/images/contacts/${image}.svg`)} alt="" />
+            <MemoImage
+              url={require(`assets/images/contacts/${image}.svg`)}
+              classes={styles.imageWrap}
+              loadedClass={styles.loaded || ''}
+            />
           </a>
         );
       })}
