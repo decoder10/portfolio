@@ -12,7 +12,7 @@ const Image: FC<IProps> = props => {
   const [isLoaded, setIsLoaded] = useState<boolean>(false);
 
   return (
-    <span className={`${classes}  ${isLoaded ? loadedClass : ''}`}>
+    <span className={`skeletonLoader ${classes}  ${isLoaded ? `${loadedClass} loaded` : ''}`}>
       <img src={url} alt="" onLoad={() => setIsLoaded(true)} />
     </span>
   );
