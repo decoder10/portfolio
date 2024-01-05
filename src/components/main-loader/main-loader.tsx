@@ -16,7 +16,7 @@ const MainLoader = (props: IProps) => {
     const timer = setTimeout(() => {
       setIsLoaded(false);
       updateLoaderState(false);
-    }, 2000);
+    }, 1500);
 
     return () => {
       clearTimeout(timer);
