@@ -18,7 +18,7 @@ const SunMoon: FC<IProps> = props => {
         <div className={styles.sun} />
         <div className={styles.moon}>
           {spotArray.map(item => (
-            <span className={`${styles.spot} ${styles[`spot--${item}`]}`} />
+            <span key={item} className={`${styles.spot} ${styles[`spot--${item}`]}`} />
           ))}
         </div>
       </div>
