@@ -77,14 +77,14 @@
 
     @for $i from 1 through 10 {
       .cloud:nth-of-type(#{$i}) {
-        margin-left: 102vw;
-        animation-delay: randomNum(200, 5200) + ms;
-        animation-duration: randomNum(28, 55) + s;
+        margin-left: randomNum(102, 115) + vw;
+        animation-delay: randomNum(500, 7000) + ms;
+        animation-duration: randomNum(35, 70) + s;
         animation-direction: alternate;
         animation-iteration-count: infinite;
         animation-name: moveCloudsToRight;
         animation-timing-function: linear;
-        scale: randomFloatInRange(0.2, 0.8);
+        scale: randomFloatInRange(0.3, 0.7);
         opacity: randomFloatInRange(0.1, 0.5);
       }
     }
@@ -100,14 +100,14 @@
 
     @for $i from 1 through 10 {
       .cloud:nth-of-type(#{$i}) {
-        margin-left: -250px;
-        animation-delay: randomNum(500, 6500) + ms;
-        animation-duration: randomNum(25, 50) + s;
+        margin-left: -(randomNum(250, 500)) + px;
+        animation-delay: randomNum(500, 7500) + ms;
+        animation-duration: randomNum(35, 70) + s;
         animation-direction: alternate;
         animation-iteration-count: infinite;
         animation-name: moveCloudsToLeft;
         animation-timing-function: linear;
-        scale: randomFloatInRange(0.2, 0.8);
+        scale: randomFloatInRange(0.3, 0.7);
         opacity: randomFloatInRange(0.1, 0.5);
       }
     }
