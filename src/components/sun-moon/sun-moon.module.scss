@@ -128,6 +128,31 @@
 }
 
 
+@media only screen and (max-height: 500px) and (max-width: 940px) and (orientation: landscape) {
+  .sunMoonWrap {
+    .sun {
+      width: 70px;
+      height: 70px;
+    }
+
+    .moon {
+      width: 70px;
+      height: 70px;
+
+      &::before {
+        width: 6px;
+        height: 6px;
+      }
+
+      &::after {
+        width: 10px;
+        height: 10px;
+      }
+    }
+  }
+}
+
+
 //<div class="moon">
 //<div></div>
 //<div></div>
