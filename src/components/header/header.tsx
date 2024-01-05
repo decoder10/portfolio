@@ -28,7 +28,7 @@ const Header = (props: IProps) => {
                 className={`${styles.cloudWrap} ${dayState === 'dark-theme' ? styles.season : ''}`}
                 style={{ animationDelay: `${Math.floor(Math.random() * 500)}ms` }}
                 key={path}
-                onClick={() => setMenuState(!menuState)}
+                onClick={() => setMenuState(false)}
               >
                 <span className={styles.bolt} />
                 <span className={styles.cloud} />
@@ -42,7 +42,7 @@ const Header = (props: IProps) => {
             href={require('assets/images/cv.pdf')}
             download="Aram Mkrtchyan cv"
             className={`${styles.cloudWrap} ${dayState === 'dark-theme' ? styles.season : ''}`}
-            onClick={() => setMenuState(!menuState)}
+            onClick={() => setMenuState(false)}
           >
             <span className={styles.bolt} />
             <span className={styles.cloud} />
