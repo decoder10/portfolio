@@ -81,9 +81,34 @@ $left: 10%;
     @media (hover: hover) {
       &:hover {
         animation-play-state: paused;
+
+        p {
+          color: var(--cloud-text-hover);
+        }
+
+        .cloud {
+          background: var(--cloud-background-hover);
+
+          &:after, &:before {
+            background: var(--cloud-background-hover);
+          }
+        }
       }
     }
 
+    &.active {
+      p {
+        color: var(--cloud-text-hover);
+      }
+
+      .cloud {
+        background: var(--cloud-background-hover);
+
+        &:after, &:before {
+          background: var(--cloud-background-hover);
+        }
+      }
+    }
 
     &:after {
       position: absolute;

@@ -20,7 +20,9 @@
   --sky-background: url("../../images/day-sky.svg");
   --cloud: 1;
   --cloud-background: #EAEFF9;
+  --cloud-background-hover: #565760;
   --cloud-text: #426167;
+  --cloud-text-hover: #ffffff;
   --loader-background: #B8CDEC;
   --team-filter: grayscale(0);
   --menu-background-front: var(--blue-color);
@@ -33,7 +35,9 @@
   --sky-background: url("../../images/night-sky.svg");
   --cloud: 0.5;
   --cloud-background: #565760;
+  --cloud-background-hover: #EAEFF9;
   --cloud-text: #ffffff;
+  --cloud-text-hover: #426167;
   --loader-background: #21212C;
   --team-filter: grayscale(100%);
   --menu-background-front: var(--indigo-color);

@@ -159,3 +159,19 @@ $border-color_2: var(--gray-border);
     }
   }
 }
+
+.switcher {
+  position: fixed;
+  top: 10%;
+  left: 50%;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  translate: -50%;
+  z-index: 7;
+  cursor: pointer;
+  background: none;
+  padding: 0;
+  border: none;
+}
+

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { routeConfig } from 'routes/routes-config';
 
@@ -23,9 +23,12 @@ const Header = (props: IProps) => {
             const { path, title, isMenuItem } = item;
 
             return isMenuItem ? (
-              <Link
+              <NavLink
                 to={path || '/'}
-                className={`${styles.cloudWrap} ${dayState === 'dark-theme' ? styles.season : ''}`}
+                className={({ isActive }) =>
+                  (isActive ? styles.active : '') +
+                  ` ${styles.cloudWrap} ${dayState === 'dark-theme' ? styles.season : ''}`
+                }
                 style={{ animationDelay: `${Math.floor(Math.random() * 500)}ms` }}
                 key={path}
                 onClick={() => setMenuState(false)}
@@ -34,7 +37,7 @@ const Header = (props: IProps) => {
                 <span className={styles.cloud} />
 
                 <p>{title}</p>
-              </Link>
+              </NavLink>
             ) : null;
           })}
 

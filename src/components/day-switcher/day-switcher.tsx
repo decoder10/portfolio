@@ -35,22 +35,33 @@ const DaySwitcher = (props: IProps) => {
   }, []);
 
   return (
-    <div className={styles.daySwitcher}>
-      <input
-        type="checkbox"
-        id="toggle"
-        checked={state !== 'light'}
-        onChange={() => {
+    <>
+      <div className={styles.daySwitcher}>
+        <input
+          type="checkbox"
+          id="toggle"
+          checked={state !== 'light'}
+          onChange={() => {
+            setState(state === 'light' ? 'dark' : 'light');
+            updateDayState(state === 'light' ? 'dark-theme' : 'light-theme');
+            sessionStorage.setItem('dayState', state === 'light' ? 'dark' : 'light');
+          }}
+        />
+
+        <label htmlFor="toggle" key="toggle-label">
+          <span />
+        </label>
+      </div>
+
+      <button
+        className={styles.switcher}
+        onClick={() => {
           setState(state === 'light' ? 'dark' : 'light');
           updateDayState(state === 'light' ? 'dark-theme' : 'light-theme');
           sessionStorage.setItem('dayState', state === 'light' ? 'dark' : 'light');
         }}
       />
-
-      <label htmlFor="toggle" key="toggle-label">
-        <span />
-      </label>
-    </div>
+    </>
   );
 };
 
