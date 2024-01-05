@@ -10,12 +10,17 @@ const SunMoon: FC<IProps> = props => {
   const { dayState } = props;
 
   const starsArray = Array.from({ length: 150 }, (_, index) => index + 1);
+  const spotArray = Array.from({ length: 8 }, (_, index) => index + 1);
 
   return (
     <div className={styles.sunMoonWrap}>
       <div className={`${styles.circle} ${dayState === 'light-theme' ? styles.show : styles.hide}`}>
         <div className={styles.sun} />
-        <div className={styles.moon} />
+        <div className={styles.moon}>
+          {spotArray.map(item => (
+            <span className={`${styles.spot} ${styles[`spot--${item}`]}`} />
+          ))}
+        </div>
       </div>
 
       <div className={`${styles.starSkye} ${dayState === 'light-theme' ? styles.hide : styles.show}`}>
