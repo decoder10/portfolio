@@ -39,6 +39,13 @@
     max-width: 72px;
     max-height: 72px;
     filter: var(--team-filter);
+    transition: filter 0.3s ease;
+
+    @media (hover: hover) {
+      &:hover {
+        filter: var(--team-filter-hover);
+      }
+    }
   }
 }
 

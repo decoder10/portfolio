@@ -23,6 +23,14 @@
       width: 150px;
       margin: 0 10px 20px;
 
+      @media (hover: hover) {
+        &:hover {
+          img {
+            filter: var(--team-filter-hover);
+          }
+        }
+      }
+
       a {
         text-decoration: none;
       }
