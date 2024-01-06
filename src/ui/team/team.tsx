@@ -8,7 +8,7 @@ import styles from './team.module.scss';
 
 const Team: FC = () => {
   return (
-    <div className={styles.team}>
+    <section className={styles.team}>
       <ul>
         {team.map(item => {
           const { image, name, linkedin, position } = item;
@@ -28,7 +28,7 @@ const Team: FC = () => {
           );
         })}
       </ul>
-    </div>
+    </section>
   );
 };
 

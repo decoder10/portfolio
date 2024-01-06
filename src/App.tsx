@@ -21,12 +21,21 @@ function App() {
         <div className={`secondary-background day-sky-background ${theme === 'light-theme' ? 'show' : ''}`} />
         <div className={`secondary-background night-sky-background ${theme === 'dark-theme' ? 'show' : ''}`} />
 
-        <img src={require('assets/images/me.png')} alt="" className="me" />
+        <img src={require('assets/images/me.png')} alt="Aram Mkrtchyan" className="me" />
 
         <Clouds />
 
-        <section className="pages-wrap">
+        {theme ? <SunMoon dayState={theme} /> : null}
+
+        <DaySwitcher updateDayState={(state: TDayState) => setTheme(state)} />
+
+        <div className="content-wrap">
           <Header dayState={theme} />
+
+          <Birds />
+
+          <div className={`main-background day-background ${theme === 'light-theme' ? 'show' : ''}`} />
+          <div className={`main-background night-background ${theme === 'dark-theme' ? 'show' : ''}`} />
 
           <React.Suspense
             fallback={
@@ -37,18 +46,9 @@ function App() {
           >
             <AppRoutes />
           </React.Suspense>
+        </div>
 
-          <Birds />
-
-          <div className={`main-background day-background ${theme === 'light-theme' ? 'show' : ''}`} />
-          <div className={`main-background night-background ${theme === 'dark-theme' ? 'show' : ''}`} />
-        </section>
-
-        {theme ? <SunMoon dayState={theme} /> : null}
-
-        <DaySwitcher updateDayState={(state: TDayState) => setTheme(state)} />
-
-        <p className="copy">© 2023 Aram MKrtchyan</p>
+        <p className="copy">© 2023 Aram Mkrtchyan</p>
       </main>
     </>
   );

@@ -6,7 +6,7 @@ import styles from './experience.module.scss';
 
 const Experience: FC = () => {
   return (
-    <div className={styles.experience}>
+    <section className={styles.experience}>
       <ul>
         {experience.map(item => {
           const { date, employer, list, position } = item;
@@ -29,7 +29,7 @@ const Experience: FC = () => {
           );
         })}
       </ul>
-    </div>
+    </section>
   );
 };
 

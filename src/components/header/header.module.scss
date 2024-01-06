@@ -49,6 +49,36 @@
   }
 }
 
+@keyframes thunder {
+  0% {
+    opacity: 0;
+  }
+  48% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.1;
+  }
+  52% {
+    opacity: 0;
+  }
+  54% {
+    opacity: 0.1;
+  }
+  56% {
+    opacity: 0;
+  }
+  58% {
+    opacity: 0.1;
+  }
+  60% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 $top: 25%;
 $left: 10%;
 
@@ -277,6 +307,31 @@ $left: 10%;
   }
 }
 
+.thunder {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 255, 255, 0.05);
+  //z-index: 100;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: blink 4s infinite;
+}
+
+.thunderSecond {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: rgb(255, 255, 255, 0.05);
+  //z-index: 100;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  animation: blink 4s infinite;
+  animation-delay: 0.5s;
+}
+
 .menu {
   --front: var(--menu-background-front);
   --back: var(--menu-background-back);
@@ -372,7 +427,7 @@ $left: 10%;
     height: 100%;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     background: rgba(255, 255, 255, 0.23);
-    backdrop-filter: blur(5.7px);
+    backdrop-filter: blur(10px);
 
     &.active {
       opacity: 1;
@@ -392,7 +447,7 @@ $left: 10%;
     height: 100%;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     background: rgba(255, 255, 255, 0.23);
-    backdrop-filter: blur(5.7px);
+    backdrop-filter: blur(10px);
 
     &.active {
       opacity: 1;

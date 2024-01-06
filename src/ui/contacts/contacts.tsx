@@ -8,7 +8,7 @@ import styles from './contacts.module.scss';
 
 const Contacts: FC = () => {
   return (
-    <div className={styles.contacts}>
+    <section className={styles.contacts}>
       {contacts.map(item => {
         const { path, image } = item;
 
@@ -22,7 +22,7 @@ const Contacts: FC = () => {
           </a>
         );
       })}
-    </div>
+    </section>
   );
 };
 

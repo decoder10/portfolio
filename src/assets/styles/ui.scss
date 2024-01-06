@@ -50,7 +50,7 @@
     }
   }
 
-  .pages-wrap {
+  .content-wrap {
     position: relative;
     display: flex;
     z-index: 1;
@@ -173,7 +173,7 @@
       display: none;
     }
 
-    .pages-wrap {
+    .content-wrap {
       padding-bottom: 10%;
 
       .main-background {
@@ -194,7 +194,7 @@
 
 @media only screen and (max-height: 500px) and (max-width: 940px) and (orientation: landscape) {
   .main {
-    .pages-wrap {
+    .content-wrap {
       padding-bottom: 8%;
 
       .main-background {
