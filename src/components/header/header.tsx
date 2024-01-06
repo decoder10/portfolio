@@ -55,8 +55,10 @@ const Header = (props: IProps) => {
         </nav>
       </header>
 
-      <div className={styles.thunder} />
-      <div className={styles.thunderSecond} />
+      <div className={`${styles.thunderGroup} ${menuState ? styles.active : ''}`}>
+        <div className={styles.thunder} />
+        <div className={styles.thunderSecond} />
+      </div>
 
       <button className={`${styles.menu} ${!menuState ? styles.active : ''}`} onClick={() => setMenuState(!menuState)}>
         <span></span>
