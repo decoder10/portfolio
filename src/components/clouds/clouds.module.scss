@@ -113,3 +113,40 @@
     }
   }
 }
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+  .clouds {
+    .rightMove {
+      @for $i from 1 through 10 {
+        .cloud:nth-of-type(#{$i}) {
+          margin-left: randomNum(102, 115) + vw;
+          animation-delay: randomNum(500, 7000) + ms;
+          animation-duration: randomNum(45, 70) + s;
+          animation-direction: alternate;
+          animation-iteration-count: infinite;
+          animation-name: moveCloudsToRight;
+          animation-timing-function: linear;
+          scale: randomFloatInRange(0.3, 0.5);
+          opacity: randomFloatInRange(0.1, 0.5);
+        }
+      }
+    }
+
+    .leftMove {
+      @for $i from 1 through 10 {
+        .cloud:nth-of-type(#{$i}) {
+          margin-left: -(randomNum(102, 115)) + vw;
+          animation-delay: randomNum(500, 7000) + ms;
+          animation-duration: randomNum(45, 70) + s;
+          animation-direction: alternate;
+          animation-iteration-count: infinite;
+          animation-name: moveCloudsToLeft;
+          animation-timing-function: linear;
+          scale: randomFloatInRange(0.3, 0.5);
+          opacity: randomFloatInRange(0.1, 0.5);
+        }
+      }
+    }
+  }
+
+}
