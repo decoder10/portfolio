@@ -73,13 +73,13 @@ $__bgColor: white;
   80% {
     scale: 0.1;
     top: 6.5%;
-    right: 25%;
+    right: 28%;
     rotate: -13deg;
   }
   100% {
     scale: 0.1;
-    top: 8.5%;
-    right: 25%;
+    top: 9%;
+    right: 28%;
     rotate: 13deg;
   }
 }
@@ -256,9 +256,9 @@ $__bgColor: white;
 @media screen and (max-width: 600px) and (orientation: portrait) {
   .rocketWrap {
     left: auto;
-    right: 25%;
+    right: 28%;
     rotate: 13deg;
-    top: 8.5%;
+    top: 9%;
     animation: rocketMobile 6s;
 
     .rocketFlame {
