@@ -7,6 +7,7 @@ import Clouds from 'components/clouds/clouds';
 import DaySwitcher from 'components/day-switcher/day-switcher';
 import Header from 'components/header/header';
 import MainLoader from 'components/main-loader/main-loader';
+import Rocket from 'components/rocket/rocket';
 import SunMoon from 'components/sun-moon/sun-moon';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
         <Clouds />
 
         {theme ? <SunMoon dayState={theme} /> : null}
+        {theme === 'dark-theme' ? <Rocket /> : null}
 
         <DaySwitcher updateDayState={(state: TDayState) => setTheme(state)} />
 
