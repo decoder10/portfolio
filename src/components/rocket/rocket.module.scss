@@ -56,6 +56,34 @@ $__bgColor: white;
   }
 }
 
+@keyframes rocketMobile {
+  0% {
+    scale: 0.5;
+    top: 100%;
+    right: 0;
+  }
+  30% {
+    rotate: -22deg;
+    right: 0;
+  }
+  60% {
+    rotate: -22deg;
+    right: 25%;
+  }
+  80% {
+    scale: 0.1;
+    top: 6.5%;
+    right: 25%;
+    rotate: -13deg;
+  }
+  100% {
+    scale: 0.1;
+    top: 8.5%;
+    right: 25%;
+    rotate: 13deg;
+  }
+}
+
 @keyframes flame {
   0% {
     opacity: 1;
@@ -207,5 +235,15 @@ $__bgColor: white;
         content: '';
       }
     }
+  }
+}
+
+@media screen and (max-width: 600px) and (orientation: portrait) {
+  .rocketWrap {
+    left: auto;
+    right: 25%;
+    rotate: 13deg;
+    top: 8.5%;
+    animation: rocketMobile 6s;
   }
 }
