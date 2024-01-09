@@ -35,7 +35,7 @@ $__bgColor: white;
 
 @keyframes rocket {
   0% {
-    scale: 0.5;
+    scale: 1;
     top: 100%;
     left: 0;
   }
@@ -108,6 +108,30 @@ $__bgColor: white;
   }
 }
 
+@keyframes flameMobile {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes flagMobile {
+  0% {
+    opacity: 0;
+  }
+  99% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .rocketWrap {
   position: fixed;
   z-index: 0;
@@ -117,15 +141,6 @@ $__bgColor: white;
   left: 51%;
   rotate: 13deg;
   top: 8.5%;
-
-  //position: fixed;
-  //z-index: 999999;
-  ////transform-origin: top left;
-  ////animation: rocket 6s;
-  ////scale: 0.1;
-  ////left: 51%;
-  ////rotate: 13deg;
-  ////top: 8.5%;
 
   .rocket {
     position: relative;
@@ -245,5 +260,14 @@ $__bgColor: white;
     rotate: 13deg;
     top: 8.5%;
     animation: rocketMobile 6s;
+
+    .rocketFlame {
+      animation: flameMobile 6s;
+    }
+
+    .flag {
+      opacity: 1;
+      animation: flagMobile 6s;
+    }
   }
 }
