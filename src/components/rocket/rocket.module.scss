@@ -43,13 +43,13 @@ $__bgColor: white;
     rotate: 40deg;
   }
   80% {
-    scale: 0.1;
+    scale: 0.15;
     top: 6.5%;
     left: 51%;
     rotate: 13deg;
   }
   100% {
-    scale: 0.1;
+    scale: 0.15;
     top: 8.5%;
     left: 51%;
     rotate: 13deg;
@@ -71,13 +71,13 @@ $__bgColor: white;
     right: 25%;
   }
   80% {
-    scale: 0.1;
+    scale: 0.15;
     top: 6.5%;
     right: 28%;
     rotate: -13deg;
   }
   100% {
-    scale: 0.1;
+    scale: 0.15;
     top: 9%;
     right: 28%;
     rotate: 13deg;
@@ -137,7 +137,7 @@ $__bgColor: white;
   z-index: 0;
   transform-origin: top left;
   animation: rocket 6s;
-  scale: 0.1;
+  scale: 0.15;
   left: 51%;
   rotate: 13deg;
   top: 8.5%;
