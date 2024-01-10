@@ -35,9 +35,9 @@ $__bgColor: white;
 
 @keyframes rocket {
   0% {
-    scale: 1;
-    top: 100%;
-    left: 0;
+    scale: 0.8;
+    top: 60%;
+    left: 15%;
   }
   50% {
     rotate: 40deg;
@@ -78,7 +78,7 @@ $__bgColor: white;
   }
   100% {
     scale: 0.15;
-    top: 9%;
+    top: 8.2%;
     right: 28%;
     rotate: 13deg;
   }
@@ -136,7 +136,7 @@ $__bgColor: white;
   position: fixed;
   z-index: 0;
   transform-origin: top left;
-  animation: rocket 6s;
+  animation: rocket 4s;
   scale: 0.15;
   left: 51%;
   rotate: 13deg;
@@ -198,7 +198,7 @@ $__bgColor: white;
     left: 19px;
     z-index: 0;
     opacity: 0;
-    animation: flame 6s;
+    animation: flame 4s;
 
     &:after {
       position: absolute;
@@ -215,7 +215,7 @@ $__bgColor: white;
     right: -120px;
     top: 90px;
     opacity: 1;
-    animation: flag 6s;
+    animation: flag 4s;
 
     &:before {
       content: '';
@@ -266,16 +266,16 @@ $__bgColor: white;
     left: auto;
     right: 28%;
     rotate: 13deg;
-    top: 9%;
-    animation: rocketMobile 6s;
+    top: 8.2%;
+    animation: rocketMobile 4s;
 
     .rocketFlame {
-      animation: flameMobile 6s;
+      animation: flameMobile 4s;
     }
 
     .flag {
       opacity: 1;
-      animation: flagMobile 6s;
+      animation: flagMobile 4s;
     }
   }
 }
