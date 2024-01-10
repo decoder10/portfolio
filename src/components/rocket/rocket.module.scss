@@ -59,27 +59,26 @@ $__bgColor: white;
 @keyframes rocketMobile {
   0% {
     scale: 0.5;
-    top: 100%;
-    right: 0;
+    top: 55%;
+    left: 100%;
   }
   30% {
     rotate: -22deg;
-    right: 0;
   }
   60% {
     rotate: -22deg;
-    right: 25%;
+    right: 75%;
   }
   80% {
     scale: 0.15;
     top: 6.5%;
-    right: 28%;
+    left: 52%;
     rotate: -13deg;
   }
   100% {
     scale: 0.15;
     top: 8.2%;
-    right: 28%;
+    left: 52%;
     rotate: 13deg;
   }
 }
@@ -263,8 +262,7 @@ $__bgColor: white;
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
   .rocketWrap {
-    left: auto;
-    right: 28%;
+    left: 52%;
     rotate: 13deg;
     top: 8.2%;
     animation: rocketMobile 4s;
