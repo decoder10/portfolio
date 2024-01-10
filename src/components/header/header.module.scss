@@ -79,6 +79,29 @@
   }
 }
 
+
+@keyframes tada {
+  0% {
+    transform: scale3d(1, 1, 1);
+  }
+
+  10%, 20% {
+    transform: scale3d(.9, .9, .9) rotate3d(0, 0, 1, -3deg);
+  }
+
+  30%, 50%, 70%, 90% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+  }
+
+  40%, 60%, 80% {
+    transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+  }
+
+  100% {
+    transform: scale3d(1, 1, 1);
+  }
+}
+
 $top: 25%;
 $left: 10%;
 
@@ -438,6 +461,9 @@ $left: 10%;
 
   .menu {
     display: block;
+    animation: tada 1s;
+    animation-delay: 1500ms;
+    animation-iteration-count: 2;
   }
 }
 
@@ -507,5 +533,8 @@ $left: 10%;
 
   .menu {
     display: block;
+    animation: tada 1s;
+    animation-delay: 1500ms;
+    animation-iteration-count: 2;
   }
 }
