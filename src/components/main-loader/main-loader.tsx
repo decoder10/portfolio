@@ -1,14 +1,19 @@
 import React, { useEffect, useState } from 'react';
 
+import { useSelector } from 'react-redux';
+
+import { getDayState } from 'reducers/day-state';
+
 import styles from './main-loader.module.scss';
 
 interface IProps {
-  theme: TDayState;
   updateLoaderState(state: boolean): void;
 }
 
 const MainLoader = (props: IProps) => {
-  const { theme, updateLoaderState } = props;
+  const { updateLoaderState } = props;
+
+  const theme = useSelector(getDayState);
 
   const [isLoaded, setIsLoaded] = useState<boolean>(true);
 

@@ -1,24 +1,22 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useEffect } from 'react';
+
+import { useDispatch, useSelector } from 'react-redux';
+
+import { getDayState, setDayStateAction } from 'reducers/day-state';
 
 import styles from './day-switcher.module.scss';
 
-interface IProps {
-  updateDayState(state: TDayState): void;
-}
-
-const DaySwitcher = (props: IProps) => {
-  const { updateDayState } = props;
-
-  const [state, setState] = useState('light');
+const DaySwitcher = () => {
+  const dayState = useSelector(getDayState);
+  const dispatch = useDispatch();
 
   const updateDayNightStatus = useCallback(() => {
     const currentHour = new Date().getHours();
 
     const isDayTime = currentHour >= 6 && currentHour < 18;
 
-    updateDayState(isDayTime ? 'light-theme' : 'dark-theme');
-    setState(isDayTime ? 'light' : 'dark');
-  }, [updateDayState]);
+    dispatch(setDayStateAction(isDayTime ? 'light-theme' : 'dark-theme'));
+  }, [dispatch]);
 
   useEffect(() => {
     updateDayNightStatus();
@@ -40,11 +38,10 @@ const DaySwitcher = (props: IProps) => {
         <input
           type="checkbox"
           id="toggle"
-          checked={state !== 'light'}
+          checked={dayState !== 'light-theme'}
           onChange={() => {
-            setState(state === 'light' ? 'dark' : 'light');
-            updateDayState(state === 'light' ? 'dark-theme' : 'light-theme');
-            sessionStorage.setItem('dayState', state === 'light' ? 'dark' : 'light');
+            dispatch(setDayStateAction(dayState === 'light-theme' ? 'dark-theme' : 'light-theme'));
+            sessionStorage.setItem('dayState', dayState === 'light-theme' ? 'dark-theme' : 'light-theme');
           }}
         />
 
@@ -56,9 +53,8 @@ const DaySwitcher = (props: IProps) => {
       <button
         className={styles.switcher}
         onClick={() => {
-          setState(state === 'light' ? 'dark' : 'light');
-          updateDayState(state === 'light' ? 'dark-theme' : 'light-theme');
-          sessionStorage.setItem('dayState', state === 'light' ? 'dark' : 'light');
+          dispatch(setDayStateAction(dayState === 'light-theme' ? 'dark-theme' : 'light-theme'));
+          sessionStorage.setItem('dayState', dayState === 'light-theme' ? 'dark-theme' : 'light-theme');
         }}
       />
     </>

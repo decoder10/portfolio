@@ -1,13 +1,13 @@
 import React, { FC } from 'react';
 
+import { useSelector } from 'react-redux';
+
+import { getDayState } from 'reducers/day-state';
+
 import styles from './sun-moon.module.scss';
 
-interface IProps {
-  dayState: TDayState;
-}
-
-const SunMoon: FC<IProps> = props => {
-  const { dayState } = props;
+const SunMoon: FC = props => {
+  const dayState = useSelector(getDayState);
 
   const starsArray = Array.from({ length: 150 }, (_, index) => index + 1);
   const spotArray = Array.from({ length: 8 }, (_, index) => index + 1);

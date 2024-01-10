@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
+import { useSelector } from 'react-redux';
+
 import AppRoutes from 'routes/app-routes';
+
+import { getDayState } from 'reducers/day-state';
 
 import Birds from 'components/birds/birds';
 import Clouds from 'components/clouds/clouds';
@@ -11,12 +15,13 @@ import Rocket from 'components/rocket/rocket';
 import SunMoon from 'components/sun-moon/sun-moon';
 
 function App() {
-  const [theme, setTheme] = useState<TDayState>('');
+  const theme = useSelector(getDayState);
+
   const [isLoaded, setIsLoaded] = useState<boolean>(true);
 
   return (
     <>
-      <MainLoader theme={theme} updateLoaderState={state => setIsLoaded(state)} />
+      <MainLoader updateLoaderState={state => setIsLoaded(state)} />
 
       <main className={`main ${theme} ${!isLoaded ? 'visible' : ''}`} key="main-wrap">
         <div className={`secondary-background day-sky-background ${theme === 'light-theme' ? 'show' : ''}`} />
@@ -26,13 +31,14 @@ function App() {
 
         <Clouds />
 
-        {theme ? <SunMoon dayState={theme} /> : null}
+        <SunMoon />
+
         {theme === 'dark-theme' ? <Rocket /> : null}
 
-        <DaySwitcher updateDayState={(state: TDayState) => setTheme(state)} />
+        <DaySwitcher />
 
         <div className="content-wrap">
-          <Header dayState={theme} />
+          <Header />
 
           <Birds />
 

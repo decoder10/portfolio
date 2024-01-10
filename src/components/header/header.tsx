@@ -5,16 +5,13 @@ import { NavLink } from 'react-router-dom';
 
 import { routeConfig } from 'routes/routes-config';
 
+import { getDayState } from 'reducers/day-state';
 import { getMenuState, setMenuStateAction } from 'reducers/menu-state';
 
 import styles from './header.module.scss';
 
-interface IProps {
-  dayState: TDayState;
-}
-
-const Header = (props: IProps) => {
-  const { dayState } = props;
+const Header = () => {
+  const dayState = useSelector(getDayState);
 
   const menuState = useSelector(getMenuState);
   const dispatch = useDispatch();
