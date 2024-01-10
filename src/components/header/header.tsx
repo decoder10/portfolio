@@ -1,8 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
 
+import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
 
 import { routeConfig } from 'routes/routes-config';
+
+import { getMenuState, setMenuStateAction } from 'reducers/menu-state';
 
 import styles from './header.module.scss';
 
@@ -13,7 +16,8 @@ interface IProps {
 const Header = (props: IProps) => {
   const { dayState } = props;
 
-  const [menuState, setMenuState] = useState<boolean>(false);
+  const menuState = useSelector(getMenuState);
+  const dispatch = useDispatch();
 
   return (
     <>
@@ -31,7 +35,7 @@ const Header = (props: IProps) => {
                 }
                 style={{ animationDelay: `${Math.floor(Math.random() * 500)}ms` }}
                 key={path}
-                onClick={() => setMenuState(false)}
+                onClick={() => dispatch(setMenuStateAction(false))}
               >
                 <span className={styles.bolt} />
                 <span className={styles.cloud} />
@@ -45,7 +49,7 @@ const Header = (props: IProps) => {
             href={require('assets/images/cv.pdf')}
             download="Aram Mkrtchyan cv"
             className={`${styles.cloudWrap} ${dayState === 'dark-theme' ? styles.season : ''}`}
-            onClick={() => setMenuState(false)}
+            onClick={() => dispatch(setMenuStateAction(false))}
           >
             <span className={styles.bolt} />
             <span className={styles.cloud} />
@@ -55,7 +59,10 @@ const Header = (props: IProps) => {
         </nav>
       </header>
 
-      <button className={`${styles.menu} ${!menuState ? styles.active : ''}`} onClick={() => setMenuState(!menuState)}>
+      <button
+        className={`${styles.menu} ${!menuState ? styles.active : ''}`}
+        onClick={() => dispatch(setMenuStateAction(!menuState))}
+      >
         <span></span>
         <span></span>
       </button>

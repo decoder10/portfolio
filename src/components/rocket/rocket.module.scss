@@ -251,6 +251,14 @@ $__bgColor: white;
       }
     }
   }
+
+  &.hide {
+    animation: none;
+
+    .rocketFlame, .flag {
+      animation: none;
+    }
+  }
 }
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
