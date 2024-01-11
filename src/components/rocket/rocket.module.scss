@@ -127,7 +127,7 @@
   position: fixed;
   z-index: 0;
   transform-origin: top left;
-  animation: rocket 4s;
+  animation: rocket 5s;
   scale: 0.15;
   left: 50.5%;
   rotate: 13deg;
@@ -189,7 +189,7 @@
     left: 19px;
     z-index: 0;
     opacity: 0;
-    animation: flame 4s;
+    animation: flame 5.3s;
 
     &:after {
       position: absolute;
