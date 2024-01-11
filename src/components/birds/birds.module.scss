@@ -123,6 +123,20 @@
   }
 }
 
+@media screen and (min-width: 2000px) {
+  .birdsContainer {
+    .birds {
+      &.front {
+        animation: flyFront 25s linear;
+      }
+
+      &.back {
+        animation: flyBack 35s linear;
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 600px) and (orientation: portrait) {
   @keyframes flyBack {
     0% {
@@ -145,3 +159,4 @@
     }
   }
 }
+

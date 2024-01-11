@@ -106,6 +106,26 @@
   }
 }
 
+@media screen and (min-width: 2000px) {
+  .clouds {
+    .rightMove {
+      @for $i from 1 through 10 {
+        .cloud:nth-of-type(#{$i}) {
+          animation-duration: randomNum(60, 100) + s;
+        }
+      }
+    }
+
+    .leftMove {
+      @for $i from 1 through 10 {
+        .cloud:nth-of-type(#{$i}) {
+          animation-duration: randomNum(60, 100) + s;
+        }
+      }
+    }
+  }
+}
+
 @media screen and (max-width: 600px) and (orientation: portrait) {
   .clouds {
     .rightMove {

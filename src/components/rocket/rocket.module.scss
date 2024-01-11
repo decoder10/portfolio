@@ -1,35 +1,6 @@
-$background-color_1: #dadada;
-$background-color_2: #d43e07;
-$background-color_3: #9e554f;
-$__rocketColor: white;
-$__rocketBubbleColor: #1b1b1b;
-$__rocketFireColor: #F2993B;
-$__bgColor: white;
-
 @keyframes animateRocket {
   to {
     transform: translateX(-50%) translateY(3px);
-  }
-}
-
-@keyframes animFire {
-  0% {
-    border-top: 50px solid $__rocketFireColor;
-  }
-  25% {
-    border-top: 50px solid $__rocketFireColor;
-  }
-  50% {
-    border-top: 55px solid $__rocketFireColor;
-  }
-  65% {
-    border-top: 48px solid $__rocketFireColor;
-  }
-  80% {
-    border-top: 40px solid $__rocketFireColor;
-  }
-  100% {
-    border-top: 60px solid $__rocketFireColor;
   }
 }
 
@@ -50,8 +21,8 @@ $__bgColor: white;
   }
   100% {
     scale: 0.15;
-    top: 8.5%;
-    left: 51%;
+    top: 8.6%;
+    left: 50.5%;
     rotate: 13deg;
   }
 }
@@ -83,7 +54,40 @@ $__bgColor: white;
   }
 }
 
+@keyframes animFire {
+  0% {
+    border-top: 50px solid #F2993B;
+  }
+  25% {
+    border-top: 50px solid #F2993B;
+  }
+  50% {
+    border-top: 55px solid #F2993B;
+  }
+  65% {
+    border-top: 48px solid #F2993B;
+  }
+  80% {
+    border-top: 40px solid #F2993B;
+  }
+  100% {
+    border-top: 60px solid #F2993B;
+  }
+}
+
 @keyframes flame {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes flameMobile {
   0% {
     opacity: 1;
   }
@@ -107,18 +111,6 @@ $__bgColor: white;
   }
 }
 
-@keyframes flameMobile {
-  0% {
-    opacity: 1;
-  }
-  80% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-  }
-}
-
 @keyframes flagMobile {
   0% {
     opacity: 0;
@@ -137,9 +129,9 @@ $__bgColor: white;
   transform-origin: top left;
   animation: rocket 4s;
   scale: 0.15;
-  left: 51%;
+  left: 50.5%;
   rotate: 13deg;
-  top: 8.5%;
+  top: 8.6%;
 
   .rocket {
     position: relative;
@@ -147,7 +139,7 @@ $__bgColor: white;
     width: 80px;
     height: 180px;
     box-shadow: 0 -3px 0 #FFF;
-    background-color: $background-color_1;
+    background-color: #dadada;
     border-radius: 50% 50% 25% 25% / 50% 50% 40% 40%;
     transform-style: preserve-3d;
     //animation: animateRocket 1s linear alternate infinite;
@@ -158,7 +150,7 @@ $__bgColor: white;
       left: 50%;
       width: 55%;
       height: 10px;
-      background-color: $background-color_2;
+      background-color: #d43e07;
       border-radius: 0 0 25% 25% / 50% 50% 40% 40%;
       transform: translateX(-50%);
       content: '';
@@ -171,7 +163,7 @@ $__bgColor: white;
       z-index: -10;
       width: 155%;
       height: 55px;
-      background-color: $background-color_3;
+      background-color: #9e554f;
       border-radius: 50% 50% 10% 10% / 90% 90% 20% 20%;
       transform: translateX(-50%) translateZ(-1px);
       content: '';
@@ -184,7 +176,7 @@ $__bgColor: white;
       width: 30px;
       height: 30px;
       box-sizing: initial;
-      background-color: $background-color_3;
+      background-color: #9e554f;
       border: 5px solid #adadad;
       border-radius: 50%;
       transform: translateX(-50%);
@@ -201,7 +193,7 @@ $__bgColor: white;
 
     &:after {
       position: absolute;
-      border-top: 60px solid $__rocketFireColor;
+      border-top: 60px solid #F2993B;
       border-right: 20px solid transparent;
       border-left: 20px solid transparent;
       animation: animFire .5s infinite;
