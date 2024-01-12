@@ -11,7 +11,7 @@
     left: 15%;
   }
   50% {
-    rotate: 40deg;
+    rotate: 30deg;
   }
   80% {
     scale: 0.15;
@@ -23,7 +23,7 @@
     scale: 0.15;
     top: 8.6%;
     left: 50.5%;
-    rotate: 13deg;
+    rotate: 15deg;
   }
 }
 
@@ -130,7 +130,7 @@
   animation: rocket 5s;
   scale: 0.15;
   left: 50.5%;
-  rotate: 13deg;
+  rotate: 15deg;
   top: 8.6%;
 
   .rocket {
@@ -206,7 +206,7 @@
     right: -120px;
     top: 90px;
     opacity: 1;
-    animation: flag 4s;
+    animation: flag 5.1s;
 
     &:before {
       content: '';
