@@ -128,10 +128,15 @@
     .birds {
       &.front {
         animation: flyFront 25s linear;
+        animation-iteration-count: infinite;
+        animation-delay: 13s;
       }
 
       &.back {
         animation: flyBack 35s linear;
+        //animation-direction: forwards;
+        animation-iteration-count: infinite;
+        animation-delay: 7s;
       }
     }
   }
