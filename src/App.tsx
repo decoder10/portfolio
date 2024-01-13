@@ -37,6 +37,10 @@ function App() {
 
         <DaySwitcher />
 
+        <a href="https://terminal.arams.website/" className="terminal-button">
+          &#60;&#95;
+        </a>
+
         <div className="content-wrap">
           <Header />
 
