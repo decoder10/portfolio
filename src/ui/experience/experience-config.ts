@@ -1,6 +1,12 @@
 export const experience: IExperience[] = [
   {
     position: 'Senior Front End Developer',
+    employer: 'SmartBet',
+    list: [],
+    date: '01/2022 - Present (Part-time)',
+  },
+  {
+    position: 'Senior Front End Developer',
     employer: 'DigitAi LLC',
     list: ['Digital Wallet Web', 'Product Web Admin panel'],
     date: '11/2022 - 11/2023',
