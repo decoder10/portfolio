@@ -6,6 +6,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
+import 'assets/styles/commons/fonts.scss';
 import 'assets/styles/portfolio.scss';
 
 const container = document.getElementById('root')!;
