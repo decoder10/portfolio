@@ -52,6 +52,16 @@
   }
 }
 
+@mixin font-face-google($name, $weight, $base64) {
+  @font-face {
+    font-family: '#{$name}';
+    font-style: normal;
+    font-weight: $weight;
+    font-display: swap;
+    src: url('data:application/x-font-woff2;charset=utf-8;base64,#{$base64}') format('woff2');
+  }
+}
+
 // font function
 //-------------------------------------------
 
@@ -121,17 +131,17 @@
   background: -moz-linear-gradient(top, $up 0%, $down 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(top, $up 0%, $down 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(
-    to bottom,
-    $up 0%,
-    $down 100%
+      to bottom,
+      $up 0%,
+      $down 100%
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   background: $left; /* Old browsers */
   background: -moz-linear-gradient(left, $left 0%, $right 100%); /* FF3.6-15 */
   background: -webkit-linear-gradient(left, $left 0%, $right 100%); /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(
-    to right,
-    $left 0%,
-    $right 100%
+      to right,
+      $left 0%,
+      $right 100%
   ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
   background: $color;
   background: -moz-linear-gradient(left, $color 0%, $color1 $percent, $color2 100%);
@@ -151,7 +161,7 @@
 //-------------------------------------------
 
 @mixin product-gradient($color, $color1, $color2, $percent: 50%) {
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#{$color}', endColorstr='#{$color2}',GradientType=1 );
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{$color}', endColorstr='#{$color2}', GradientType=1);
 }
 
 // Text gradient horizontal function
