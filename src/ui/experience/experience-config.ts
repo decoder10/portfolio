@@ -15,7 +15,7 @@ export const experience: IExperience[] = [
     position: 'Front End Team lead',
     employer: 'Converse Bank LLC',
     list: ['Converse Bank Mobile App', 'Product Web Admin panel'],
-    date: '01/2019 - 11/2022',
+    date: '12/2020 - 11/2022',
   },
   {
     position: 'Front End Developer',
