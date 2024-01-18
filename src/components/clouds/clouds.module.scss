@@ -111,7 +111,7 @@
     .rightMove {
       @for $i from 1 through 10 {
         .cloud:nth-of-type(#{$i}) {
-          animation-duration: randomNum(60, 100) + s;
+          animation-duration: randomNum(60, 200) + s;
         }
       }
     }
@@ -119,7 +119,7 @@
     .leftMove {
       @for $i from 1 through 10 {
         .cloud:nth-of-type(#{$i}) {
-          animation-duration: randomNum(60, 100) + s;
+          animation-duration: randomNum(60, 200) + s;
         }
       }
     }
