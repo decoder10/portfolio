@@ -9,7 +9,7 @@
 
 @keyframes moveCloudsToLeft {
   0% {
-    margin-left: -(randomNum(0, 1500)) + px;
+    margin-left: -(randomNum(5, 50)) + vw;
   }
   100% {
     margin-left: 102vw;
@@ -92,7 +92,7 @@
 
     @for $i from 1 through 10 {
       .cloud:nth-of-type(#{$i}) {
-        margin-left: -(randomNum(0, 1500)) + px;
+        margin-left: -(randomNum(5, 50)) + vw;
         opacity: randomFloatInRange(0.1, 0.5);
         //animation-delay: randomNum(500, 4000) + ms;
         animation-duration: randomNum(75, 120) + s;
@@ -131,7 +131,7 @@
     .rightMove {
       @for $i from 1 through 10 {
         .cloud:nth-of-type(#{$i}) {
-          margin-left: randomNum(102, 115) + vw;
+          margin-left: randomNum(102, 150) + vw;
           opacity: randomFloatInRange(0.1, 0.5);
           animation-delay: randomNum(500, 7000) + ms;
           animation-duration: randomNum(45, 70) + s;
@@ -147,7 +147,7 @@
     .leftMove {
       @for $i from 1 through 10 {
         .cloud:nth-of-type(#{$i}) {
-          margin-left: -(randomNum(5, 30)) + vw;
+          margin-left: -(randomNum(5, 50)) + vw;
           opacity: randomFloatInRange(0.1, 0.5);
           animation-delay: randomNum(500, 4000) + ms;
           animation-duration: randomNum(45, 70) + s;
