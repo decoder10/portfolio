@@ -13,6 +13,7 @@ import Header from 'components/header/header';
 import MainLoader from 'components/main-loader/main-loader';
 import Rocket from 'components/rocket/rocket';
 import SunMoon from 'components/sun-moon/sun-moon';
+import Ufo from 'components/ufo/ufo';
 
 function App() {
   const theme = useSelector(getDayState);
@@ -59,6 +60,8 @@ function App() {
             <AppRoutes />
           </React.Suspense>
         </div>
+
+        {theme === 'light-theme' ? <Ufo /> : null}
 
         <p className="copy">© 2023 Aram Mkrtchyan</p>
       </main>
