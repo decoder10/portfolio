@@ -163,5 +163,19 @@
       transform: translate3d(-130vw, -0, 0) rotate(0deg);
     }
   }
+
+  .birdsContainer {
+    .birds {
+      &.front {
+        animation: flyFront 13s linear;
+        animation-delay: 13s;
+      }
+
+      &.back {
+        animation: flyBack 13s linear;
+        animation-delay: 7s;
+      }
+    }
+  }
 }
 
