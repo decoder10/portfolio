@@ -71,11 +71,11 @@
   }
   60% {
     top: 50%;
-    scale: 0.5;
+    scale: 0.4;
   }
   86% {
     top: 50%;
-    scale: 0.5;
+    scale: 0.4;
   }
   100% {
     top: -100px;
@@ -126,6 +126,33 @@
   80% {
     bottom: 30%;
     width: 60px;
+    opacity: 0;
+    rotate: 80deg;
+  }
+}
+
+@keyframes cowMobile {
+  0% {
+    bottom: 0;
+    width: 80px;
+    opacity: 1;
+    rotate: 0deg;
+  }
+  63% {
+    bottom: 0;
+    width: 80px;
+    opacity: 1;
+    rotate: 0deg;
+  }
+  64% {
+    bottom: 0;
+    width: 80px;
+    opacity: 1;
+    rotate: 0deg;
+  }
+  80% {
+    bottom: 30%;
+    width: 30px;
     opacity: 0;
     rotate: 80deg;
   }
@@ -320,6 +347,16 @@ $ufoAnimationTime: 4s;
       .light {
         animation: none;
       }
+    }
+  }
+
+  .cow {
+    width: 80px;
+    animation: cowMobile $ufoAnimationTime linear;
+    animation-delay: 2s;
+
+    &.hide {
+      animation: none;
     }
   }
 }
