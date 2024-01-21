@@ -24,7 +24,7 @@ const Ufo: FC = () => {
         <div className={styles.light} />
       </div>
 
-      <img src={cow} alt="" className={styles.cow} />
+      <img src={cow} alt="" className={`${styles.cow} ${menuState ? styles.hide : ''}`} />
     </>
   );
 };
