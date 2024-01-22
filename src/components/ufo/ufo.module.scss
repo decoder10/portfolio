@@ -53,11 +53,11 @@
     top: -100px;
   }
   60% {
-    top: 60%;
+    top: 50%;
     scale: 1;
   }
   86% {
-    top: 60%;
+    top: 52%;
     scale: 1;
   }
   100% {
@@ -90,15 +90,15 @@
     width: 0;
     opacity: 0;
   }
-  63% {
+  64% {
     width: 200px;
     opacity: 1;
   }
-  81% {
+  83% {
     width: 200px;
     opacity: 1;
   }
-  82% {
+  85% {
     width: 0;
     opacity: 0;
   }
@@ -111,19 +111,19 @@
     opacity: 1;
     rotate: 0deg;
   }
-  63% {
+  66% {
     bottom: 0;
     width: 100px;
     opacity: 1;
     rotate: 0deg;
   }
-  64% {
+  67% {
     bottom: 0;
     width: 100px;
     opacity: 1;
     rotate: 0deg;
   }
-  80% {
+  82% {
     bottom: 30%;
     width: 60px;
     opacity: 0;
