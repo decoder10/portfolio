@@ -63,7 +63,7 @@ function App() {
 
         {theme === 'light-theme' ? <Ufo /> : null}
 
-        <p className="copy">© 2023 Aram Mkrtchyan</p>
+        <p className="copy">© {new Date().getFullYear()} Aram Mkrtchyan</p>
       </main>
     </>
   );
