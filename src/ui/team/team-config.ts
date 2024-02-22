@@ -5,7 +5,7 @@ export const team: ITeam[] = [
     image: 'david',
     linkedin: 'https://www.linkedin.com/in/dharutyu',
   },
-  {
+  /* {
     name: 'Spartak Ghazaryan',
     position: 'Backend Developer',
     image: 'spartak',
@@ -34,5 +34,5 @@ export const team: ITeam[] = [
     position: 'Senior QA Automation',
     image: 'davit',
     linkedin: 'https://www.linkedin.com/in/davit-harutyun/',
-  },
+  }, */
 ];
