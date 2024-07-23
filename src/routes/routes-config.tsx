@@ -74,7 +74,7 @@ export const routeConfig: CustomRouteConfig[] = [
     path: '/team',
     title: 'team',
     element: <Team />,
-    isMenuItem: true,
+    isMenuItem: false,
   },
   {
     path: '/contacts',
