@@ -32,8 +32,8 @@ const Home: FC = () => {
           <span>product engineering</span>
         </li>
         <li>
-          <strong>Fintech</strong>
-          <span>banking &amp; platforms</span>
+          <strong>Fintech + iGaming</strong>
+          <span>banking, casino &amp; platforms</span>
         </li>
       </ul>
     </section>
