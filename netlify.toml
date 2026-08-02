@@ -4,7 +4,22 @@
   status = 200
 
 [[headers]]
-  for = "/static/*"
+  for = "/static/media/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, s-maxage=2592000, immutable"
+
+[[headers]]
+  for = "/me.png"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000, s-maxage=2592000"
+
+[[headers]]
+  for = "/static/js/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/static/css/*"
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
