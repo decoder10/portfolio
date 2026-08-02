@@ -2,7 +2,7 @@ export const experience: IExperience[] = [
   {
     position: 'Senior Front End Developer',
     employer: 'SmartBet',
-    list: [],
+    list: ['Casino Platform Development'],
     date: '01/2024 - Present',
   },
   {
