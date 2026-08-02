@@ -1,7 +1,7 @@
 export const contacts: IContacts[] = [
   {
     image: 'email',
-    path: 'mailto:mkrtchyan.aram89@gmail',
+    path: 'mailto:mkrtchyan.aram89@gmail.com',
   },
   {
     image: 'phone',

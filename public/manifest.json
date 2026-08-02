@@ -1,21 +1,16 @@
 {
-  "short_name": "Aram Mkrtchyan Portfolio",
-  "name": "Aram Mkrtchyan Portfolio | Senior Front End Developer",
+  "short_name": "Aram Mkrtchyan",
+  "name": "Aram Mkrtchyan — Senior Front-End Engineer",
   "icons": [
     {
       "src": "me.png",
       "type": "image/png",
-      "sizes": "192x192",
-      "purpose": "any maskable"
-    },
-    {
-      "src": "me.png",
-      "type": "image/png",
-      "sizes": "512x512"
+      "sizes": "196x196",
+      "purpose": "any"
     }
   ],
-  "start_url": ".",
+  "start_url": "/",
   "display": "standalone",
-  "theme_color": "#1976d2",
-  "background_color": "#F7F8FA"
+  "theme_color": "#17383c",
+  "background_color": "#14272b"
 }

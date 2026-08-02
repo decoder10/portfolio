@@ -7,6 +7,10 @@ import styles from './experience.module.scss';
 const Experience: FC = () => {
   return (
     <section className={styles.experience}>
+      <div className={styles.heading}>
+        <span>Experience</span>
+        <h1>Products, teams and impact.</h1>
+      </div>
       <ul>
         {experience.map(item => {
           const { date, employer, list, position } = item;

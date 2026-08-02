@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { NavLink } from 'react-router-dom';
@@ -15,12 +15,30 @@ const Header = () => {
 
   const menuState = useSelector(getMenuState);
   const dispatch = useDispatch();
+  const menuButtonRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (!menuState) {
+      return undefined;
+    }
+
+    const closeMenu = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') {
+        dispatch(setMenuStateAction(false));
+        menuButtonRef.current?.focus();
+      }
+    };
+
+    document.addEventListener('keydown', closeMenu);
+
+    return () => document.removeEventListener('keydown', closeMenu);
+  }, [dispatch, menuState]);
 
   return (
     <>
-      <header className={`${styles.mainHeader} ${menuState ? styles.active : ''}`}>
-        <nav>
-          {routeConfig.map(item => {
+      <header id="primary-navigation" className={`${styles.mainHeader} ${menuState ? styles.active : ''}`}>
+        <nav aria-label="Primary navigation">
+          {routeConfig.map((item, index) => {
             const { path, title, isMenuItem } = item;
 
             return isMenuItem ? (
@@ -30,7 +48,7 @@ const Header = () => {
                   (isActive ? styles.active : '') +
                   ` ${styles.cloudWrap} ${dayState === 'dark-theme' ? styles.season : ''}`
                 }
-                style={{ animationDelay: `${Math.floor(Math.random() * 500)}ms` }}
+                style={{ animationDelay: `${index * 80}ms` }}
                 key={path}
                 onClick={() => dispatch(setMenuStateAction(false))}
               >
@@ -57,7 +75,12 @@ const Header = () => {
       </header>
 
       <button
+        ref={menuButtonRef}
+        type="button"
         className={`${styles.menu} ${!menuState ? styles.active : ''}`}
+        aria-label={menuState ? 'Close navigation menu' : 'Open navigation menu'}
+        aria-expanded={menuState}
+        aria-controls="primary-navigation"
         onClick={() => dispatch(setMenuStateAction(!menuState))}
       >
         <span></span>

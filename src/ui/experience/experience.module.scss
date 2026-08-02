@@ -4,22 +4,45 @@
   display: flex;
   z-index: 6;
   justify-content: space-between;
-  padding: 20px 20px 0;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-  background: rgba(var(--glass-background), 0.4);
-  border-radius: 16px;
-  user-select: none;
-  backdrop-filter: blur(10px);
+  flex-direction: column;
+  width: min(980px, calc(100% - 40px));
+  padding: clamp(24px, 4vw, 40px);
+  box-shadow: 0 24px 80px rgba(3, 12, 17, 0.3);
+  background: linear-gradient(145deg, rgba(9, 22, 28, 0.88), rgba(22, 45, 48, 0.68));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 28px;
+  backdrop-filter: blur(18px) saturate(120%);
+
+  .heading {
+    margin-bottom: 24px;
+
+    span {
+      color: #bdeff4;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin-top: 10px;
+      color: #fff;
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.035em;
+    }
+  }
 
   > ul {
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    max-height: 30vh;
+    max-height: 36vh;
     overflow-y: auto;
 
     > li {
-      width: 33%;
+      width: 33.333%;
+      padding-right: 20px;
       margin-bottom: 20px;
       padding-bottom: 20px;
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);

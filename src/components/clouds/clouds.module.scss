@@ -1,163 +1,250 @@
-@keyframes moveCloudsToRight {
-  0% {
-    margin-left: randomNum(102, 150) + vw;
-  }
-  100% {
-    margin-left: -102vw;
-  }
+@keyframes driftRight {
+  from { transform: translate3d(-28vw, 0, 0) scale(var(--scale)); }
+  to { transform: translate3d(132vw, 0, 0) scale(var(--scale)); }
 }
 
-@keyframes moveCloudsToLeft {
-  0% {
-    margin-left: -(randomNum(5, 50)) + vw;
-  }
-  100% {
-    margin-left: 102vw;
-  }
+@keyframes rainfall {
+  0% { opacity: 0; transform: translate3d(0, -4px, 0); }
+  16% { opacity: 0.58; }
+  100% { opacity: 0; transform: translate3d(-7px, 54px, 0); }
 }
 
-@function randomNum($min, $max) {
-  $rand: random();
-  $randomNum: $min + floor($rand * (($max - $min) + 1));
-
-  @return $randomNum;
+@keyframes lightningBolt {
+  0%, 71%, 73%, 75%, 100% { opacity: 0; }
+  72%, 74% { opacity: 0.88; }
 }
 
-@function randomFloatInRange($min, $max) {
-  @return $min + random() * ($max - $min);
+@keyframes stormFlash {
+  0%, 71%, 73%, 75%, 100% { opacity: 0; }
+  72% { opacity: 0.1; }
+  74% { opacity: 0.055; }
 }
 
 .clouds {
   position: fixed;
+  z-index: 3;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   overflow: hidden;
+  pointer-events: none;
+  contain: layout paint;
+
+  &.storm::after {
+    position: fixed;
+    z-index: -1;
+    inset: 0;
+    background: #eaf2ff;
+    opacity: 0;
+    animation: stormFlash 10s linear infinite;
+    content: '';
+  }
 
   .cloud {
-    width: 60px;
-    height: 60px;
-    box-shadow: #FFFFFF 65px -15px 0 -5px,
-    #FFFFFF 25px -25px,
-    #FFFFFF 30px 10px,
-    #FFFFFF 60px 15px 0 -10px,
-    #FFFFFF 85px 5px 0 -5px;
-    background: #FFFFFF;
-    border-radius: 50%;
+    --scale: 1;
+    --blur: 0px;
 
-    &:after {
+    position: absolute;
+    left: 0;
+    display: block;
+    width: 176px;
+    height: 38px;
+    border-radius: 999px;
+    background: var(--atmospheric-cloud);
+    box-shadow: inset 0 -7px 12px var(--atmospheric-cloud-shadow), 0 10px 24px rgba(27, 50, 63, 0.06);
+    filter: blur(var(--blur));
+    opacity: 0.46;
+    will-change: transform;
+    animation-name: driftRight;
+    animation-duration: var(--duration);
+    animation-delay: var(--delay);
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    &::before,
+    &::after {
       position: absolute;
-      top: 65px;
-      left: 2px;
-      width: 2px;
-      height: 6px;
-      box-sizing: border-box;
-      color: #FFF;
-      animation: cloudLoader 0.6s linear infinite;
+      bottom: 9px;
+      border-radius: 50%;
+      background: inherit;
       content: '';
     }
-  }
 
-  .rightMove {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding-top: 15px;
+    &::before {
+      left: 29px;
+      width: 62px;
+      height: 62px;
+      box-shadow: inset 0 7px 12px var(--atmospheric-cloud-highlight);
+    }
 
-    @for $i from 1 through 10 {
-      .cloud:nth-of-type(#{$i}) {
-        margin-left: randomNum(102, 150) + vw;
-        opacity: randomFloatInRange(0.1, 0.5);
-        animation-delay: randomNum(500, 7000) + ms;
-        animation-duration: randomNum(75, 120) + s;
-        animation-iteration-count: infinite;
-        animation-name: moveCloudsToRight;
-        animation-timing-function: linear;
-        animation-direction: alternate;
-        scale: randomFloatInRange(0.3, 0.7);
-      }
+    &::after {
+      right: 30px;
+      width: 78px;
+      height: 78px;
+      box-shadow: inset 0 8px 14px var(--atmospheric-cloud-highlight);
     }
   }
 
-  .leftMove {
+  .farLayer,
+  .nearLayer {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    padding-top: 15px;
+    inset: 0;
+  }
 
-    @for $i from 1 through 10 {
-      .cloud:nth-of-type(#{$i}) {
-        margin-left: -(randomNum(5, 50)) + vw;
-        opacity: randomFloatInRange(0.1, 0.5);
-        //animation-delay: randomNum(500, 4000) + ms;
-        animation-duration: randomNum(75, 120) + s;
-        animation-iteration-count: infinite;
-        animation-name: moveCloudsToLeft;
-        animation-timing-function: linear;
-        animation-direction: alternate;
-        scale: randomFloatInRange(0.3, 0.7);
+  .farLayer {
+    opacity: 0.46;
+
+    .cloud {
+      --blur: 0.7px;
+
+      width: 218px;
+      height: 32px;
+
+      &::before {
+        width: 76px;
+        height: 54px;
       }
+
+      &::after {
+        width: 96px;
+        height: 66px;
+      }
+
+      &:nth-child(1) { top: 4%; --scale: 0.68; --duration: 116s; --delay: -82s; }
+      &:nth-child(2) { top: 9%; --scale: 0.48; --duration: 132s; --delay: -18s; }
+      &:nth-child(3) { top: 14%; --scale: 0.58; --duration: 126s; --delay: -103s; }
+      &:nth-child(4) { top: 19%; --scale: 0.42; --duration: 148s; --delay: -67s; }
+      &:nth-child(5) { top: 24%; --scale: 0.52; --duration: 138s; --delay: -35s; }
+      &:nth-child(6) { top: 29%; --scale: 0.38; --duration: 156s; --delay: -121s; }
+      &:nth-child(7) { top: 34%; --scale: 0.46; --duration: 144s; --delay: -54s; }
+      &:nth-child(8) { top: 39%; --scale: 0.34; --duration: 164s; --delay: -137s; }
     }
   }
-}
 
-@media screen and (min-width: 2000px) {
-  .clouds {
-    .rightMove {
-      @for $i from 1 through 10 {
-        .cloud:nth-of-type(#{$i}) {
-          animation-duration: randomNum(60, 200) + s;
+  .nearLayer {
+    .cloud {
+      &:nth-child(1) { top: 6%; --scale: 0.72; --duration: 98s; --delay: -52s; }
+      &:nth-child(2) { top: 11%; --scale: 0.88; --duration: 112s; --delay: -96s; }
+      &:nth-child(3) { top: 16%; --scale: 0.64; --duration: 104s; --delay: -12s; }
+      &:nth-child(4) { top: 21%; --scale: 0.78; --duration: 124s; --delay: -73s; }
+      &:nth-child(5) { top: 26%; --scale: 0.56; --duration: 118s; --delay: -29s; }
+      &:nth-child(6) { top: 31%; --scale: 0.69; --duration: 108s; --delay: -88s; }
+      &:nth-child(7) { top: 36%; --scale: 0.51; --duration: 128s; --delay: -43s; }
+
+      &:nth-child(2) {
+        .rain { animation-delay: -0.38s; }
+      }
+
+      &:nth-child(3) {
+        .rain { animation-delay: -0.66s; }
+      }
+
+      &:nth-child(4) {
+        .rain { animation-delay: -0.18s; }
+
+        .bolt {
+          animation-delay: -5s;
         }
       }
-    }
 
-    .leftMove {
-      @for $i from 1 through 10 {
-        .cloud:nth-of-type(#{$i}) {
-          animation-duration: randomNum(60, 200) + s;
+      &:nth-child(5) {
+        .rain { animation-delay: -0.52s; }
+      }
+
+      &:nth-child(6) {
+        .rain { animation-delay: -0.28s; }
+
+        .bolt {
+          animation-delay: -2.5s;
         }
       }
+
+      &:nth-child(7) {
+        .rain { animation-delay: -0.74s; }
+      }
     }
+  }
+
+  .rain {
+    position: absolute;
+    top: 42px;
+    left: 34px;
+    width: 2px;
+    height: 13px;
+    background: rgba(207, 225, 255, 0.82);
+    border-radius: 999px;
+    box-shadow: 24px 8px rgba(207, 225, 255, 0.62),
+      49px -2px rgba(207, 225, 255, 0.76),
+      76px 9px rgba(207, 225, 255, 0.55),
+      102px 1px rgba(207, 225, 255, 0.72);
+    rotate: 10deg;
+    animation: rainfall 0.9s linear infinite;
+  }
+
+  .bolt {
+    position: absolute;
+    top: 39px;
+    left: 52%;
+    z-index: -1;
+    width: 18px;
+    height: 42px;
+    background: #ffe06a;
+    clip-path: polygon(45% 0, 100% 0, 63% 40%, 91% 40%, 20% 100%, 39% 53%, 8% 53%);
+    filter: drop-shadow(0 0 7px rgba(255, 224, 106, 0.7));
+    opacity: 0;
+    animation: lightningBolt 10s linear infinite;
   }
 }
 
 @media screen and (max-width: 600px) and (orientation: portrait) {
   .clouds {
-    .rightMove {
-      @for $i from 1 through 10 {
-        .cloud:nth-of-type(#{$i}) {
-          margin-left: randomNum(102, 150) + vw;
-          opacity: randomFloatInRange(0.1, 0.5);
-          animation-delay: randomNum(500, 7000) + ms;
-          animation-duration: randomNum(25, 50) + s;
-          animation-iteration-count: infinite;
-          animation-name: moveCloudsToRight;
-          animation-timing-function: linear;
-          animation-direction: alternate;
-          scale: randomFloatInRange(0.3, 0.5);
+    .farLayer {
+      opacity: 0.34;
+
+      .cloud {
+        &:nth-child(even) {
+          display: none;
         }
       }
     }
 
-    .leftMove {
-      @for $i from 1 through 10 {
-        .cloud:nth-of-type(#{$i}) {
-          margin-left: -(randomNum(5, 50)) + vw;
-          opacity: randomFloatInRange(0.1, 0.5);
-          animation-delay: randomNum(500, 4000) + ms;
-          animation-duration: randomNum(25, 50) + s;
-          animation-iteration-count: infinite;
-          animation-name: moveCloudsToLeft;
-          animation-timing-function: linear;
-          animation-direction: alternate;
-          scale: randomFloatInRange(0.3, 0.5);
+    .nearLayer {
+      .cloud {
+        opacity: 0.38;
+
+        &:nth-child(2) {
+          top: 20%;
+        }
+
+        &:nth-child(n + 6) {
+          display: none;
         }
       }
+    }
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .clouds {
+    &.storm::after,
+    .rain,
+    .bolt {
+      display: none;
+    }
+
+    .cloud {
+      animation: none;
+      transform: translate3d(var(--resting-x), 0, 0) scale(var(--scale));
+
+      &:nth-child(1) { --resting-x: 8vw; }
+      &:nth-child(2) { --resting-x: 68vw; }
+      &:nth-child(3) { --resting-x: 28vw; }
+      &:nth-child(4) { --resting-x: 82vw; }
+      &:nth-child(5) { --resting-x: 52vw; }
+      &:nth-child(6) { --resting-x: 14vw; }
+      &:nth-child(7) { --resting-x: 42vw; }
+      &:nth-child(8) { --resting-x: 74vw; }
     }
   }
 }

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { FC, useEffect, useState } from 'react';
 
 import { useSelector } from 'react-redux';
 
@@ -7,32 +7,64 @@ import { getDayState } from 'reducers/day-state';
 import styles from './main-loader.module.scss';
 
 interface IProps {
-  updateLoaderState(state: boolean): void;
+  onComplete(): void;
 }
 
-const MainLoader = (props: IProps) => {
-  const { updateLoaderState } = props;
-
+const MainLoader: FC<IProps> = ({ onComplete }) => {
   const theme = useSelector(getDayState);
-
-  const [isLoaded, setIsLoaded] = useState<boolean>(true);
+  const [isLeaving, setIsLeaving] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsLoaded(false);
-      updateLoaderState(false);
-    }, 1500);
+    let isMounted = true;
+    let revealTimer: ReturnType<typeof setTimeout>;
+    let removeTimer: ReturnType<typeof setTimeout>;
+    let windowReadyResolve: (() => void) | undefined;
+    const handleWindowLoad = () => windowReadyResolve?.();
+
+    const waitForWindow = new Promise<void>(resolve => {
+      if (document.readyState === 'complete') {
+        resolve();
+        return;
+      }
+
+      windowReadyResolve = resolve;
+      window.addEventListener('load', handleWindowLoad, { once: true });
+    });
+
+    const fontsReady = document.fonts?.ready ?? Promise.resolve();
+
+    Promise.all([waitForWindow, fontsReady]).then(() => {
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          if (!isMounted) {
+            return;
+          }
+
+          onComplete();
+          revealTimer = setTimeout(() => {
+            setIsLeaving(true);
+            removeTimer = setTimeout(() => setIsVisible(false), 320);
+          }, 280);
+        });
+      });
+    });
 
     return () => {
-      clearTimeout(timer);
+      isMounted = false;
+      window.removeEventListener('load', handleWindowLoad);
+      clearTimeout(revealTimer);
+      clearTimeout(removeTimer);
     };
+  }, [onComplete]);
 
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  return isLoaded ? (
-    <div className={`${styles.mainLoader} ${theme}`}>
-      <div className={styles.loader} />
+  return isVisible ? (
+    <div
+      className={`${styles.mainLoader} ${styles[isLeaving ? 'leaving' : 'entering']} ${theme}`}
+      role="status"
+      aria-label="Loading portfolio"
+    >
+      <div className={styles.loader} aria-hidden="true" />
     </div>
   ) : null;
 };

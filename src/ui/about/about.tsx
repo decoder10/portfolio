@@ -5,12 +5,12 @@ import styles from './about.module.scss';
 const About: FC = () => {
   return (
     <section className={styles.about}>
+      <span>About me</span>
+      <h1>Engineering thoughtful products, end to end.</h1>
       <p>
-        Experienced Senior Front-End Developer with a decade of expertise in the banking, gambling and digital wallet
-        industries. Proficient in JavaScript, React, React Native, CSS and HTML, including CSS preprocessors.
-        Specialized in creating mobile banking apps, admin panels and casino platforms, with a strong focus on
-        user-centric design and functionality. Recognized for delivering high-quality solutions and contributing to
-        successful projects.
+        I’m a senior front-end engineer with more than a decade of experience across banking, digital wallets and gaming
+        platforms. I turn complex product requirements into clear, maintainable interfaces for web and mobile, with a
+        strong focus on performance, accessibility and the details users feel.
       </p>
     </section>
   );

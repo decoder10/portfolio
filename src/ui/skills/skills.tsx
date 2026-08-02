@@ -16,6 +16,10 @@ const skills: { name: string; image: string }[] = [
 const Skills: FC = () => {
   return (
     <section className={styles.skills}>
+      <div className={styles.heading}>
+        <span>Core toolkit</span>
+        <h1>Skills for shipping polished products.</h1>
+      </div>
       <ul>
         {skills.map(item => {
           const { image, name } = item;

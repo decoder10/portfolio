@@ -1,14 +1,49 @@
 .notFound {
-  user-select: none;
-  text-align: center;
   position: relative;
-  z-index: 3;
+  z-index: 6;
+  width: min(620px, calc(100% - 40px));
+  padding: clamp(28px, 5vw, 48px);
+  color: #fff;
+  background: linear-gradient(145deg, rgba(9, 22, 28, 0.9), rgba(22, 45, 48, 0.72));
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 28px;
+  box-shadow: 0 24px 80px rgba(3, 12, 17, 0.3);
+  backdrop-filter: blur(18px) saturate(120%);
+
+  > span {
+    color: #bdeff4;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+  }
+
+  h1 {
+    margin-top: 12px;
+    font-size: clamp(34px, 6vw, 54px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: -0.04em;
+  }
 
   p {
-    font-size: 40px;
+    max-width: 500px;
+    margin-top: 18px;
+    color: rgba(255, 255, 255, 0.72);
+    font-size: 17px;
+    line-height: 1.55;
+  }
+
+  a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 46px;
+    padding: 0 20px;
+    margin-top: 24px;
+    color: #17383c;
+    background: #fff;
+    border-radius: 999px;
+    font-size: 14px;
     font-weight: 700;
-    text-transform: uppercase;
-    color: white;
-    opacity: 0.5;
+    text-decoration: none;
   }
 }

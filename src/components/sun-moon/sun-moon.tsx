@@ -6,7 +6,7 @@ import { getDayState } from 'reducers/day-state';
 
 import styles from './sun-moon.module.scss';
 
-const SunMoon: FC = props => {
+const SunMoon: FC = () => {
   const dayState = useSelector(getDayState);
 
   const starsArray = Array.from({ length: 150 }, (_, index) => index + 1);
@@ -23,11 +23,13 @@ const SunMoon: FC = props => {
         </div>
       </div>
 
-      <div className={`${styles.starSkye} ${dayState === 'light-theme' ? styles.hide : styles.show}`}>
-        {starsArray.map(item => {
-          return <span className={`${styles.star} ${styles[`star${item}`]}`} key={item} />;
-        })}
-      </div>
+      {dayState === 'dark-theme' ? (
+        <div className={`${styles.starSkye} ${styles.show}`}>
+          {starsArray.map(item => {
+            return <span className={`${styles.star} ${styles[`star${item}`]}`} key={item} />;
+          })}
+        </div>
+      ) : null}
     </div>
   );
 };

@@ -19,7 +19,9 @@ const DaySwitcher = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    updateDayNightStatus();
+    if (!sessionStorage.getItem('dayState')) {
+      updateDayNightStatus();
+    }
 
     const intervalId = setInterval(() => {
       if (!sessionStorage.getItem('dayState')) {
@@ -34,11 +36,12 @@ const DaySwitcher = () => {
 
   return (
     <>
-      <div className={styles.daySwitcher}>
+      <div className={styles.daySwitcher} aria-hidden="true">
         <input
           type="checkbox"
           id="toggle"
           checked={dayState !== 'light-theme'}
+          tabIndex={-1}
           onChange={() => {
             dispatch(setDayStateAction(dayState === 'light-theme' ? 'dark-theme' : 'light-theme'));
             sessionStorage.setItem('dayState', dayState === 'light-theme' ? 'dark-theme' : 'light-theme');
@@ -51,7 +54,10 @@ const DaySwitcher = () => {
       </div>
 
       <button
+        type="button"
         className={styles.switcher}
+        aria-label={`Switch to ${dayState === 'light-theme' ? 'night' : 'day'} theme`}
+        title={`Switch to ${dayState === 'light-theme' ? 'night' : 'day'} theme`}
         onClick={() => {
           dispatch(setDayStateAction(dayState === 'light-theme' ? 'dark-theme' : 'light-theme'));
           sessionStorage.setItem('dayState', dayState === 'light-theme' ? 'dark-theme' : 'light-theme');

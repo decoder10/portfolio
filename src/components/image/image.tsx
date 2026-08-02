@@ -16,7 +16,14 @@ const Image: FC<IProps> = props => {
       className={`skeletonLoader ${classes}  ${isLoaded ? `${loadedClass} loaded` : ''}`}
       style={{ opacity: 1, marginTop: 0 }}
     >
-      <img src={url} alt="" onLoad={() => setIsLoaded(true)} style={{ margin: '0 auto' }} />
+      <img
+        src={url}
+        alt=""
+        loading="lazy"
+        decoding="async"
+        onLoad={() => setIsLoaded(true)}
+        style={{ margin: '0 auto' }}
+      />
     </span>
   );
 };
